@@ -12,7 +12,7 @@
 </script>
 
 <nav class="fixed top-0 left-0 h-full w-64 border-r border-gray-200 bg-white p-6">
-	<a href="/" class="text-xl font-semibold text-gray-900">📘 dotenv-diff</a>
+	<a on:click={() => setActive('/')} href="/" class="text-xl font-semibold text-gray-900">📘 dotenv-diff</a>
 
 	<ul class="mt-8 space-y-4">
 		{#each navItems as item}
