@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@fontsource/rubik':
+        specifier: ^5.2.6
+        version: 5.2.6
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.5
@@ -279,6 +283,9 @@ packages:
 
   '@fontsource/fira-mono@5.2.6':
     resolution: {integrity: sha512-6pyiGeFH+5DP5sICSwx5wu+9BlTEMTKki7bTppsEqXJysi1MiK82n6oSUaYkQWRLH51+DK7zv2JJsi82cOIS3g==}
+
+  '@fontsource/rubik@5.2.6':
+    resolution: {integrity: sha512-KNY87CIXAzmKMfL8gnQV0nbePn9g/kG3tF4GJoUEASSz+ECFWYoPir8TSySblYfXTInDL/kHJm6CMrrEW/U/ZA==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1645,6 +1652,8 @@ snapshots:
       levn: 0.4.1
 
   '@fontsource/fira-mono@5.2.6': {}
+
+  '@fontsource/rubik@5.2.6': {}
 
   '@humanfs/core@0.19.1': {}
 

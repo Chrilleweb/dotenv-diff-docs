@@ -1,2 +1,13 @@
 @import 'tailwindcss';
-@import '@fontsource/fira-mono';
+@import '@fontsource/rubik';  
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+@theme {
+    --color-background-color: #ffffff;
+    --color-navbar-color: #34495e;
+    --color-text-color: #34495e;
+    --color-text-hover-color: #cacbce;
+}
