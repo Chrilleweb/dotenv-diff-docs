@@ -1,10 +1,7 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { startTypewriter } from '$lib/typeWriter';
+	import Title from '../components/Title.svelte';
 		
 	let showModal = false;
-	let displayedText = '';
-	const fullText = 'dotenv-diff';
 
 	function openModal() {
 		showModal = true;
@@ -15,19 +12,14 @@
 	}
 
 	function handleKeydown(event: KeyboardEvent) {
-		if (event.key === 'Escape') {
+		if (event.key === 'Escape' && showModal) {
+			event.preventDefault();
 			closeModal();
 		}
 	}
-
-function updateDisplayedText(text: string) {
-		displayedText = text;
-	}
-	
-	onMount(() => {
-		startTypewriter(fullText, updateDisplayedText);
-	});
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
 	<title>dotenv-diff</title>
@@ -37,7 +29,7 @@ function updateDisplayedText(text: string) {
 <div class="space-y-4">
 	<div class="gap-8 items-center">
 		<div class="flex-1 mb-8">
-			<h1 class="mb-4 text-4xl h-[3.5rem]">{displayedText}</h1>
+			<Title />
 			<p class="mb-8">
 				Scan your entire codebase to detect every environment variable reference and compares it
 				against your .env files. This makes it easy to spot unused, missing, and duplicate
