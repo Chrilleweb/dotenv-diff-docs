@@ -19,12 +19,12 @@ export function startTypewriter(
       setTimeout(() => {
         onUpdate(''); // Clear teksten
         currentIndex = 0;
-        setTimeout(typeNextChar, 200); // Lille pause før restart
+        setTimeout(typeNextChar, 800); // Lille pause før restart
       }, resetDelay);
     }
   }
 
   // Start typewriter
-  onUpdate('dotenv-diff');
+  onUpdate(fullText);
   typeNextChar();
 }

@@ -28,7 +28,7 @@
 <div class="space-y-4">
 	<div class="items-center gap-8">
 		<div class="mb-8 flex-1">
-			<Title />
+			<Title fullText="dotenv-diff" />
 			<p class="mb-8">
 				Scan your entire codebase to detect every environment variable reference and compares it
 				against your .env files. This makes it easy to spot unused, missing, and duplicate
