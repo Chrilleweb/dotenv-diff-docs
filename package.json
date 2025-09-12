@@ -42,6 +42,7 @@
 		]
 	},
 	"dependencies": {
-		"@fontsource/rubik": "^5.2.6"
+		"@fontsource/rubik": "^5.2.6",
+		"dotenv-diff": "^2.2.3"
 	}
 }

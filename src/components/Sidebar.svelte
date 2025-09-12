@@ -3,8 +3,8 @@
 	let open = false;
 	const navItems = [
 		{ title: 'Home', href: '/' },
-		{ title: 'Getting Started', href: '/getting-started' },
 		{ title: 'Installation', href: '/installation' },
+		{ title: 'Usage', href: '/usage' },
 		{ title: 'Compare ', href: '/compare' }
 	];
 
