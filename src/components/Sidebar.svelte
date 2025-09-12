@@ -1,11 +1,21 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+
 	let open = false;
+	let dropdownOpen: string | null = null;
+
 	const navItems = [
 		{ title: 'Home', href: '/' },
 		{ title: 'Installation', href: '/installation' },
 		{ title: 'Usage', href: '/usage' },
-		{ title: 'Compare ', href: '/compare' }
+		{
+			title: 'Guides',
+			children: [
+				{ title: 'Compare', href: '/compare' },
+				{ title: 'Scan Usage', href: '/scan-usage' },
+				{ title: 'Fix Issues', href: '/fix' }
+			]
+		}
 	];
 
 	onMount(() => {
@@ -15,20 +25,49 @@
 		window.addEventListener('resize', handler);
 		return () => window.removeEventListener('resize', handler);
 	});
-</script>
 
+	function toggleDropdown(title: string) {
+		dropdownOpen = dropdownOpen === title ? null : title;
+	}
+</script>
 
 <!-- Desktop sidebar -->
 <nav class="fixed top-0 left-0 h-full w-64 bg-navbar-color p-8 text-white hidden lg:block z-40">
 	<a href="/" class="text-xl font-semibold">dotenv-diff</a>
-	<ul class="mt-8 space-y-4">
+	<ul class="mt-8 space-y-2">
 		{#each navItems as item}
 			<li>
-				<a
-					href={item.href}
-					class="hover:underline block rounded-md transition-colors">
-					{item.title}
-				</a>
+				{#if item.children}
+					<div>
+						<button
+							class="cursor-pointer w-full text-left font-medium hover:underline"
+							on:click={() => toggleDropdown(item.title)}
+						>
+							{item.title}
+						</button>
+						{#if dropdownOpen === item.title}
+							<ul class="ml-4 mt-2 space-y-1 text-sm text-gray-300">
+								{#each item.children as child}
+									<li>
+										<a
+											href={child.href}
+											class="hover:underline block rounded-md transition-colors"
+										>
+											{child.title}
+										</a>
+									</li>
+								{/each}
+							</ul>
+						{/if}
+					</div>
+				{:else}
+					<a
+						href={item.href}
+						class="hover:underline block rounded-md transition-colors"
+					>
+						{item.title}
+					</a>
+				{/if}
 			</li>
 		{/each}
 	</ul>
@@ -40,9 +79,18 @@
 	aria-label="Open menu"
 	on:click={() => (open = !open)}
 >
-	<span class="block w-7 h-1 bg-white rounded mb-1 transition-all duration-300" style:transform={open ? 'rotate(45deg) translateY(10px)' : ''}></span>
-	<span class="block w-7 h-1 bg-white rounded mb-1 transition-all duration-300" style:opacity={open ? 0 : 1}></span>
-	<span class="block w-7 h-1 bg-white rounded transition-all duration-300" style:transform={open ? 'rotate(-45deg) translateY(-10px)' : ''}></span>
+	<span
+		class="block w-7 h-1 bg-white rounded mb-1 transition-all duration-300"
+		style:transform={open ? 'rotate(45deg) translateY(10px)' : ''}
+	></span>
+	<span
+		class="block w-7 h-1 bg-white rounded mb-1 transition-all duration-300"
+		style:opacity={open ? 0 : 1}
+	></span>
+	<span
+		class="block w-7 h-1 bg-white rounded transition-all duration-300"
+		style:transform={open ? 'rotate(-45deg) translateY(-10px)' : ''}
+	></span>
 </button>
 
 <!-- Mobile/Tablet menu -->
@@ -54,18 +102,46 @@
 		on:click={() => (open = false)}
 		tabindex="0"
 	></button>
-	<nav class="fixed top-0 right-0 h-full w-64 bg-navbar-color p-8 text-white z-50 shadow-lg transition-transform duration-300 lg:hidden">
+	<nav
+		class="fixed top-0 right-0 h-full w-64 bg-navbar-color p-8 text-white z-50 shadow-lg transition-transform duration-300 lg:hidden"
+	>
 		<a href="/" class="text-xl font-semibold block mb-8">dotenv-diff</a>
-		<ul class="space-y-4">
+		<ul class="space-y-2">
 			{#each navItems as item}
 				<li>
-					<a
-						href={item.href}
-						class="hover:underline block rounded-md transition-colors"
-						on:click={() => (open = false)}
-					>
-						{item.title}
-					</a>
+					{#if item.children}
+						<div>
+							<button
+								class="w-full text-left font-medium hover:underline"
+								on:click={() => toggleDropdown(item.title)}
+							>
+								{item.title}
+							</button>
+							{#if dropdownOpen === item.title}
+								<ul class="ml-4 mt-2 space-y-1 text-sm text-gray-300">
+									{#each item.children as child}
+										<li>
+											<a
+												href={child.href}
+												class="hover:underline block rounded-md transition-colors"
+												on:click={() => (open = false)}
+											>
+												{child.title}
+											</a>
+										</li>
+									{/each}
+								</ul>
+							{/if}
+						</div>
+					{:else}
+						<a
+							href={item.href}
+							class="hover:underline block rounded-md transition-colors"
+							on:click={() => (open = false)}
+						>
+							{item.title}
+						</a>
+					{/if}
 				</li>
 			{/each}
 		</ul>
