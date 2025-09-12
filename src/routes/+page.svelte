@@ -1,13 +1,11 @@
 <script lang="ts">
 	import Title from '../components/Title.svelte';
 	import BackNext from '../components/BackNext.svelte';
-
+	import DemoModal from '../components/modals/OpenGif.svelte';
 	let showModal = false;
-
 	function openModal() {
 		showModal = true;
 	}
-
 	function closeModal() {
 		showModal = false;
 	}
@@ -40,7 +38,7 @@
 		<div class="flex-shrink-0">
 			<button
 				type="button"
-				class="lg:w-1/3 w-full cursor-pointer rounded-md border-0 bg-transparent p-0 transition-opacity hover:opacity-90"
+				class="w-full cursor-pointer rounded-md border-0 bg-transparent p-0 transition-opacity hover:opacity-90 lg:w-1/3"
 				on:click={openModal}
 				aria-label="Click to view demo in full size"
 				style="max-width: 32rem;"
@@ -63,28 +61,4 @@
 
 <BackNext backHref={null} nextHref="/installation" nextTitle="Installation" />
 
-{#if showModal}
-	<div
-		class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4"
-		on:click={closeModal}
-		on:keydown={handleKeydown}
-		role="dialog"
-		aria-modal="true"
-		tabindex="0"
-	>
-		<div class="relative max-h-full max-w-5xl">
-			<button
-				class="absolute -top-12 right-0 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white/10 text-xl text-white transition-colors hover:text-gray-300"
-				on:click={closeModal}
-				aria-label="Close modal"
-			>
-				✕
-			</button>
-			<img
-				src="/demo.gif"
-				alt="Demo of dotenv-diff - Full size"
-				class="max-h-full max-w-full rounded-lg object-contain"
-			/>
-		</div>
-	</div>
-{/if}
+<DemoModal open={showModal} onClose={closeModal} />
