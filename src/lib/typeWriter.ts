@@ -3,7 +3,7 @@ export function startTypewriter(
   fullText: string,
   onUpdate: (text: string) => void,
   speed: number = 100,
-  resetDelay: number = 5000
+  resetDelay: number = 8000
 ) {
   let currentIndex = 0;
 

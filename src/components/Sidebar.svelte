@@ -49,7 +49,7 @@
 {#if open}
 	<button
 		type="button"
-		class="fixed inset-0 bg-black bg-opacity-40 z-40 lg:hidden"
+		class="fixed inset-0 bg-black/50 z-40 lg:hidden"
 		aria-label="Close menu overlay"
 		on:click={() => (open = false)}
 		tabindex="0"
