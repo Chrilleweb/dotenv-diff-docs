@@ -25,6 +25,6 @@ export function startTypewriter(
   }
 
   // Start typewriter
-  onUpdate(''); // Start med tom tekst
+  onUpdate('dotenv-diff');
   typeNextChar();
 }

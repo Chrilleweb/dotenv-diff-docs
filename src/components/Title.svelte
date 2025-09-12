@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { startTypewriter } from '$lib/typeWriter';
 
-	let displayedText = '';
+	let displayedText = 'dotenv-diff';
 	const fullText = 'dotenv-diff';
 
 	function updateDisplayedText(text: string) {

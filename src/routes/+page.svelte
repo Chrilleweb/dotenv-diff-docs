@@ -36,16 +36,11 @@
 				against your .env files. This makes it easy to spot unused, missing, and duplicate
 				variables, and even keep your codebase safe from accidental commits of secrets.
 			</p>
-			<p class="mb-8">
-				Knowing which environment variables are <em>actually used</em> in your codebase is just as important
-				as keeping your .env files consistent. Over time, projects accumulate unused keys, missing values,
-				or secrets that never get cleaned up.
-			</p>
 		</div>
 		<div class="flex-shrink-0">
 			<button
 				type="button"
-				class="w-1/3 cursor-pointer rounded-md border-0 bg-transparent p-0 transition-opacity hover:opacity-90"
+				class="lg:w-1/3 w-full cursor-pointer rounded-md border-0 bg-transparent p-0 transition-opacity hover:opacity-90"
 				on:click={openModal}
 				aria-label="Click to view demo in full size"
 				style="max-width: 32rem;"

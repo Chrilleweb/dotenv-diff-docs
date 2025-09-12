@@ -1,14 +1,26 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	let open = false;
 	const navItems = [
+		{ title: 'Home', href: '/' },
 		{ title: 'Getting Started', href: '/getting-started' },
 		{ title: 'Installation', href: '/installation' },
 		{ title: 'Compare ', href: '/compare' }
 	];
+
+	onMount(() => {
+		const handler = () => {
+			if (window.innerWidth >= 1024) open = false;
+		};
+		window.addEventListener('resize', handler);
+		return () => window.removeEventListener('resize', handler);
+	});
 </script>
 
-<nav class="fixed top-0 left-0 h-full w-64 bg-navbar-color p-8 text-white">
-	<a href="/" class="text-xl font-semibold">dotenv-diff</a>
 
+<!-- Desktop sidebar -->
+<nav class="fixed top-0 left-0 h-full w-64 bg-navbar-color p-8 text-white hidden lg:block z-40">
+	<a href="/" class="text-xl font-semibold">dotenv-diff</a>
 	<ul class="mt-8 space-y-4">
 		{#each navItems as item}
 			<li>
@@ -21,3 +33,41 @@
 		{/each}
 	</ul>
 </nav>
+
+<!-- Burger menu button (mobile/tablet) -->
+<button
+	class="fixed top-6 right-6 z-50 flex flex-col items-center justify-center w-12 h-12 rounded-md bg-navbar-color text-white shadow-lg lg:hidden focus:outline-none"
+	aria-label="Open menu"
+	on:click={() => (open = !open)}
+>
+	<span class="block w-7 h-1 bg-white rounded mb-1 transition-all duration-300" style:transform={open ? 'rotate(45deg) translateY(10px)' : ''}></span>
+	<span class="block w-7 h-1 bg-white rounded mb-1 transition-all duration-300" style:opacity={open ? 0 : 1}></span>
+	<span class="block w-7 h-1 bg-white rounded transition-all duration-300" style:transform={open ? 'rotate(-45deg) translateY(-10px)' : ''}></span>
+</button>
+
+<!-- Mobile/Tablet menu -->
+{#if open}
+	<button
+		type="button"
+		class="fixed inset-0 bg-black bg-opacity-40 z-40 lg:hidden"
+		aria-label="Close menu overlay"
+		on:click={() => (open = false)}
+		tabindex="0"
+	></button>
+	<nav class="fixed top-0 right-0 h-full w-64 bg-navbar-color p-8 text-white z-50 shadow-lg transition-transform duration-300 lg:hidden">
+		<a href="/" class="text-xl font-semibold block mb-8">dotenv-diff</a>
+		<ul class="space-y-4">
+			{#each navItems as item}
+				<li>
+					<a
+						href={item.href}
+						class="hover:underline block rounded-md transition-colors"
+						on:click={() => (open = false)}
+					>
+						{item.title}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</nav>
+{/if}
