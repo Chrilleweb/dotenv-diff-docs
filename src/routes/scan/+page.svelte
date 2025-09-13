@@ -74,6 +74,13 @@
     onClick={() => openModal('/scan-duplicates.png')}
   />
 
+  <p>Detect potential secrets in your .env file</p>
+  <ClickableImage
+    src="/scan-secrets.png"
+    alt="Scan report showing potential secrets"
+    onClick={() => openModal('/scan-secrets.png')}
+  />
+
   <p>
     This helps keep your environment clean and production-ready, without guesswork.
   </p>
