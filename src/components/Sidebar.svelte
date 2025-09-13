@@ -7,12 +7,11 @@
 	const navItems = [
 		{ title: 'Home', href: '/' },
 		{ title: 'Installation', href: '/installation' },
-		{ title: 'Usage', href: '/usage' },
 		{
-			title: 'Guides',
+			title: 'Usage',
 			children: [
+				{ title: 'Scan', href: '/scan' },
 				{ title: 'Compare', href: '/compare' },
-				{ title: 'Scan Usage', href: '/scan-usage' },
 				{ title: 'Fix Issues', href: '/fix' }
 			]
 		}
@@ -43,7 +42,10 @@
 							class="cursor-pointer w-full text-left font-medium hover:underline"
 							on:click={() => toggleDropdown(item.title)}
 						>
-							{item.title}
+							<span>{item.title}</span>
+			<span class="ml-2 text-sm">
+				{dropdownOpen === item.title ? '↑' : '↓'}
+			</span>
 						</button>
 						{#if dropdownOpen === item.title}
 							<ul class="ml-4 mt-2 space-y-1 text-sm text-gray-300">
