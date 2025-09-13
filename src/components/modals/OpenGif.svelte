@@ -1,6 +1,7 @@
 <script lang="ts">
   export let open: boolean;
   export let onClose: () => void;
+  export let imgSrc: string;
 </script>
 
 {#if open}
@@ -27,7 +28,7 @@
         ✕
       </button>
       <img
-        src="/demo.gif"
+        src={imgSrc}
         alt="Demo of dotenv-diff - Full size"
         class="max-h-full max-w-full rounded-lg object-contain"
       />

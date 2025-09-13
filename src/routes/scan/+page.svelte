@@ -2,8 +2,31 @@
   import Title from '$components/Title.svelte';
   import BackNext from '$components/BackNext.svelte';
   import CodeBlock from '$components/CodeBlock.svelte';
+  import OpenImg from '$components/modals/OpenGif.svelte';
+  import ClickableImage from '$components/ClickableImage.svelte';
+  
+  let showModal = false;
+  let currentImageSrc = '';
+  
+  function openModal(imgSrc: string) {
+    currentImageSrc = imgSrc;
+    showModal = true;
+  }
+  
+  function closeModal() {
+    showModal = false;
+    currentImageSrc = '';
+  }
 
+  function handleKeydown(event: KeyboardEvent) {
+    if (event.key === 'Escape' && showModal) {
+      event.preventDefault();
+      closeModal();
+    }
+  }
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
   <title>dotenv-diff - Scan Usage</title>
@@ -20,34 +43,42 @@
 
   <p>If you dont have a .env file, dotenv-diff will just scan your codebase without any reference.</p>
 
+    <ClickableImage
+    src="/scan-noenv.png"
+    alt="Scan report showing missing keys"
+    onClick={() => openModal('/scan-noenv.png')}
+  />
+
   <p>
-    This makes it easy to catch:
-  </p>
-
-  <ul class="list-disc list-inside space-y-1">
-    <li>Missing keys→ variables used in code but not defined in <code>.env</code></li>
-    <li>Unused keys→ variables defined but never used anywhere</li>
-    <li>Duplicates→ multiple definitions of the same variable</li>
-    <li>Secrets→ suspicious keys like passwords or tokens hardcoded in your codebase</li>
-  </ul>
-
-  <CodeBlock label="Terminal" command="dotenv-diff" />
-
-  <p class="mt-6">
-    After the scan, you’ll see a clear report directly in your terminal. Here are some examples:
+    If you have a .env file, dotenv-diff will show a clear report directly in your terminal. Here are some examples:
   </p>
 
   <p>Find missing environment variables in your .env file, that are used in codebase</p>
-    <img src="/scan-missing.png" alt="Scan report showing missing keys" class="rounded-lg border border-gray-700 shadow-md" />
-    <p class="mt-6">Find unused environment variables in your .env file, that are not used in codebase</p>
-    <img src="/scan-unused.png" alt="Scan report showing unused keys" class="rounded-lg border border-gray-700 shadow-md" />
-    <p class="mt-6">Find duplicate keys in your .env file</p>
-    <img src="/scan-duplicates.png" alt="Scan report showing duplicate keys" class="rounded-lg border border-gray-700 shadow-md md:col-span-2" />
+  <ClickableImage
+    src="/scan-missing.png"
+    alt="Scan report showing missing keys"
+    onClick={() => openModal('/scan-missing.png')}
+  />
+  
+  <p>Find unused environment variables in your .env file, that are not used in codebase</p>
+  <ClickableImage
+    src="/scan-unused.png"
+    alt="Scan report showing unused keys"
+    onClick={() => openModal('/scan-unused.png')}
+  />
+  
+  <p>Find duplicate keys in your .env file</p>
+  <ClickableImage
+    src="/scan-duplicates.png"
+    alt="Scan report showing duplicate keys"
+    onClick={() => openModal('/scan-duplicates.png')}
+  />
 
-
-  <p class="mt-6">
+  <p>
     This helps keep your environment clean and production-ready, without guesswork.
   </p>
 </div>
 
 <BackNext backHref="/usage" nextHref="/compare" nextTitle="Compare" />
+
+<OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />

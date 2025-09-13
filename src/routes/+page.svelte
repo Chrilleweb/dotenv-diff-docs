@@ -1,9 +1,12 @@
 <script lang="ts">
-	import Title from '../components/Title.svelte';
-	import BackNext from '../components/BackNext.svelte';
-	import DemoModal from '../components/modals/OpenGif.svelte';
+	import Title from '$components/Title.svelte';
+	import BackNext from '$components/BackNext.svelte';
+	import OpenImg from '$components/modals/OpenGif.svelte';
+	import ClickableImage from '$components/ClickableImage.svelte';
 	let showModal = false;
-	function openModal() {
+	let currentImageSrc = '';
+	function openModal(imgSrc: string) {
+		currentImageSrc = imgSrc;
 		showModal = true;
 	}
 	function closeModal() {
@@ -36,20 +39,11 @@
 			</p>
 		</div>
 		<div class="flex-shrink-0">
-			<button
-				type="button"
-				class="w-full cursor-pointer rounded-md border-0 bg-transparent p-0 transition-opacity hover:opacity-90 lg:w-1/3"
-				on:click={openModal}
-				aria-label="Click to view demo in full size"
-				style="max-width: 32rem;"
-			>
-				<img
-					src="/demo.gif"
-					alt="Demo of dotenv-diff"
-					class="h-auto w-full max-w-lg rounded-md border object-contain"
-					draggable="false"
-				/>
-			</button>
+			<ClickableImage
+				src="/demo.gif"
+				alt="Demo of dotenv-diff"
+				onClick={() => openModal('/demo.gif')}
+			/>
 			<p class="mt-8">
 				Optimized for SvelteKit. Also works well in modern JavaScript/TypeScript projects and
 				frameworks like Node.js, Next.js, Nuxt, and Vue — or any other setup where you want reliable
@@ -61,4 +55,4 @@
 
 <BackNext backHref={null} nextHref="/installation" nextTitle="Installation" />
 
-<DemoModal open={showModal} onClose={closeModal} />
+<OpenImg open={showModal} onClose={closeModal} imgSrc="/demo.gif" />
