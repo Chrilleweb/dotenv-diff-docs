@@ -13,7 +13,7 @@ const config = {
       fallback: 'index.html'
     }),
     paths: {
-      base: process.env.NODE_ENV === 'production' ? '/dotenv-diff.github.io' : ''
+      base: process.env.NODE_ENV === 'production' ? '/dotenv-diff' : ''
     },
 	prerender: {
     handleHttpError: 'warn'
