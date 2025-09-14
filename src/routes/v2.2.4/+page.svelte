@@ -31,4 +31,4 @@
 	</ul>
 </div>
 
-<BackNext backHref={null} nextHref="/installation" nextTitle="Installation" />
+<BackNext backHref="/flags" nextHref={null} nextTitle="Next" />

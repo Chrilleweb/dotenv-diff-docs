@@ -85,6 +85,6 @@
   </p>
 </div>
 
-<BackNext backHref="/usage" nextHref="/flags" nextTitle="Flags" />
+<BackNext backHref="/installation" nextHref="/flags" nextTitle="Flags" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />
