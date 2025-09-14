@@ -29,7 +29,6 @@
   <div class="px-4 pb-6 text-sm">
     <code>
       {#if command.includes(' ')}
-        <!-- Farvelæg første ord -->
         <span class="text-pink-400">{command.split(' ')[0]}</span>{' '}
         <span class="text-sky-400">{command.split(' ').slice(1).join(' ')}</span>
       {:else}
