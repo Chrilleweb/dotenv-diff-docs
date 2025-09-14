@@ -20,15 +20,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-
+      
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 10
-          run_install: false
-
+          version: 8
+      
       - run: pnpm install
-
       - run: pnpm run build
       
       - name: Setup Pages
