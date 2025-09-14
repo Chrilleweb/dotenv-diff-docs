@@ -31,7 +31,7 @@
 <div class="space-y-6">
 	<Title fullText="Release Notes - v2.2.4" />
 
-	<p class="mb-8">
+	<p class="mb-8 mt-8 sm:mt-0">
 		Released on 2025-09-13. This version focuses on fixing issues with scan results and improving
 		accuracy of the reported statistics. No breaking changes were introduced.
 	</p>
