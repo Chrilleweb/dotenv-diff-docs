@@ -3,7 +3,7 @@
 	import BackNext from '$components/BackNext.svelte';
 	import CodeBlock from '$components/CodeBlock.svelte';
 	import ClickableImage from '$components/ClickableImage.svelte';
-    import OpenImg from '$components/modals/OpenGif.svelte';
+	import OpenImg from '$components/modals/OpenGif.svelte';
 
 	let showModal = false;
 	let currentImageSrc = '';
@@ -102,150 +102,90 @@
 				src="/compare.png"
 				alt="Scan report showing unused keys"
 				onClick={() => openModal('/compare.png')}
-                extraClasses="mt-4"
+				extraClasses="mt-4"
 			/>
-
-			<div class="space-y-3">
-					<p class="mt-2">Together with compare, check values between your .env* files</p>
+			<p class="mt-2">Together with compare, check values between your .env* files</p>
 			<CodeBlock label="Terminal" command="dotenv-diff --compare --check-values" />
-
-
-				<p class="mt-2">Together with compare, you can allow duplicate values.</p>
+			<p class="mt-2">Together with compare, you can allow duplicate values.</p>
 			<CodeBlock label="Terminal" command="dotenv-diff --compare --allow-duplicates" />
-				<p class="mt-2">
-					Only run specific analysis categories. Available: missing, extra, empty, mismatch,
-					duplicate, gitignore.
-				</p>
-				<CodeBlock label="Terminal" command="dotenv-diff --compare --only missing,duplicate" />
-                <p>By running --compare without having a .env or .env.example file, you will be prompted to create one.</p>
-                <ClickableImage
+			<p class="mt-2">
+				Only run specific analysis categories. Available: missing, extra, empty, mismatch,
+				duplicate, gitignore.
+			</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --compare --only missing,duplicate" />
+			<p>
+				By running --compare without having a .env or .env.example file, you will be prompted to
+				create one.
+			</p>
+			<ClickableImage
 				src="/compare-yes.png"
 				alt="Scan report showing unused keys"
 				onClick={() => openModal('/compare-yes.png')}
 			/>
-                <p class="mt-2">You can automatically answer "Yes" to all prompts and run non-interactively. in this scenario, you will not be prompted to create a .env from your existing .env.example file.</p>
+			<p class="mt-2">
+				You can automatically answer "Yes" to all prompts and run non-interactively. in this
+				scenario, you will not be prompted to create a .env from your existing .env.example file.
+			</p>
 			<CodeBlock label="Terminal" command="dotenv-diff --compare --yes" />
-			</div>
 		</section>
 
 		<section>
 			<h2 class="mb-3 text-xl font-semibold">Automation & CI/CD</h2>
-
-			<div class="space-y-3">
-				<div class="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-					<code class="rounded bg-red-100 px-2 py-1 font-mono text-sm dark:bg-red-900">--ci</code>
 					<p class="mt-2">
 						Run in CI mode: non-interactive and never creates files. Perfect for continuous
 						integration.
 					</p>
-				</div>
-
-				<div class="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-					<code class="rounded bg-red-100 px-2 py-1 font-mono text-sm dark:bg-red-900"
-						>-y, --yes</code
-					>
-					<p class="mt-2">Automatically answer "Yes" to all prompts and run non-interactively.</p>
-				</div>
-
-				<div class="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-					<code class="rounded bg-red-100 px-2 py-1 font-mono text-sm dark:bg-red-900"
-						>--strict</code
-					>
+                    <CodeBlock label="Terminal" command="dotenv-diff --ci" />
 					<p class="mt-2">
 						Enable strict mode - the process will fail on warnings, not just errors.
 					</p>
-				</div>
+                    <CodeBlock label="Terminal" command="dotenv-diff --strict" />
 
-				<div class="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-					<code class="rounded bg-red-100 px-2 py-1 font-mono text-sm dark:bg-red-900">--fix</code>
 					<p class="mt-2">
 						Automatically fix common issues like removing duplicates and adding missing keys.
 					</p>
-				</div>
-			</div>
+                    <CodeBlock label="Terminal" command="dotenv-diff --fix" />
 		</section>
 
 		<section>
 			<h2 class="mb-3 text-xl font-semibold">Output Control</h2>
 
-			<div class="space-y-3">
-				<div class="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-					<code class="rounded bg-indigo-100 px-2 py-1 font-mono text-sm dark:bg-indigo-900"
-						>--json</code
-					>
 					<p class="mt-2">Output results in JSON format instead of human-readable text.</p>
-				</div>
+                    <CodeBlock label="Terminal" command="dotenv-diff --json" />
 
-				<div class="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-					<code class="rounded bg-indigo-100 px-2 py-1 font-mono text-sm dark:bg-indigo-900"
-						>--no-color</code
-					>
 					<p class="mt-2">Disable colored output for terminals that don't support colors.</p>
-				</div>
+                    <CodeBlock label="Terminal" command="dotenv-diff --no-color" />
 
-				<div class="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-					<code class="rounded bg-indigo-100 px-2 py-1 font-mono text-sm dark:bg-indigo-900"
-						>--no-show-unused</code
-					>
 					<p class="mt-2">Hide variables that are defined in .env but not used in your codebase.</p>
-				</div>
+                    <CodeBlock label="Terminal" command="dotenv-diff --no-show-unused" />
 
-				<div class="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-					<code class="rounded bg-indigo-100 px-2 py-1 font-mono text-sm dark:bg-indigo-900"
-						>--no-show-stats</code
-					>
 					<p class="mt-2">Hide the statistics summary at the end of the report.</p>
-				</div>
-			</div>
+                    <CodeBlock label="Terminal" command="dotenv-diff --no-show-stats" />
 		</section>
 
 		<section>
 			<h2 class="mb-3 text-xl font-semibold">Security</h2>
 
-			<div class="space-y-3">
-				<div class="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-					<code class="rounded bg-pink-100 px-2 py-1 font-mono text-sm dark:bg-pink-900"
-						>--no-secrets</code
-					>
 					<p class="mt-2">
-						Disable secret detection during codebase scanning (secret detection is enabled by
+						Disable potential secret detection during codebase scanning (secret detection is enabled by
 						default).
 					</p>
-				</div>
-			</div>
+                    <CodeBlock label="Terminal" command="dotenv-diff --no-secrets" />
+
 		</section>
 
 		<section>
 			<h2 class="mb-3 text-xl font-semibold">Common Flag Combinations</h2>
 
-			<div class="space-y-3">
-				<div class="rounded-lg bg-blue-50 p-4 dark:bg-blue-900">
-					<p class="mb-2 font-medium">CI/CD Pipeline:</p>
-					<CodeBlock label="Terminal" command="dotenv-diff --ci --strict --json" />
-					<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-						Perfect for automated checks that fail on issues and output JSON for parsing.
-					</p>
-				</div>
+					<p class="mt-2">CI/CD Pipeline:</p>
+                    <p>This command sets up a CI/CD pipeline with strict mode and compare it to your .env.example file.</p>
+					<CodeBlock label="Terminal" command="dotenv-diff --ci --strict --example .env.example" />
 
-				<div class="rounded-lg bg-blue-50 p-4 dark:bg-blue-900">
-					<p class="mb-2 font-medium">Custom File Patterns:</p>
-					<CodeBlock
-						label="Terminal"
-						command="dotenv-diff --files src/**/*.ts,*.vue --exclude-files *.test.ts"
-					/>
-					<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-						Scan only TypeScript and Vue files, but skip test files.
-					</p>
-				</div>
-
-				<div class="rounded-lg bg-blue-50 p-4 dark:bg-blue-900">
-					<p class="mb-2 font-medium">Focus on Missing Variables:</p>
-					<CodeBlock label="Terminal" command="dotenv-diff --only missing --no-show-unused" />
-					<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-						Only check for missing variables and hide unused ones.
-					</p>
-				</div>
-			</div>
+                    <p class="mt-2">This command works well in a turbo monorepo setup.</p>
+                    <CodeBlock
+                     label="Terminal"
+                     command='dotenv-diff --include-files "./src/**/*,../../packages/**/*"'
+                      />
 		</section>
 	</div>
 
