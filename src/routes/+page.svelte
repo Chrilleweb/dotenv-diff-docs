@@ -28,29 +28,34 @@
 	<meta name="description" content="dotenv-diff documentation" />
 </svelte:head>
 
-<div class="space-y-4">
-	<div class="items-center gap-8">
-		<div class="mb-8 flex-1">
-			<Title fullText="dotenv-diff" />
-			<p class="mb-8">
-				Scan your entire codebase to detect every environment variable reference and compares it
-				against your .env files. This makes it easy to spot unused, missing, and duplicate
-				variables, and even keep your codebase safe from accidental commits of secrets.
-			</p>
-		</div>
-		<div class="flex-shrink-0">
-			<ClickableImage
-				src="/demo.gif"
-				alt="Demo of dotenv-diff"
-				onClick={() => openModal('/demo.gif')}
-			/>
-			<p class="mt-8">
-				Optimized for SvelteKit. Also works well in modern JavaScript/TypeScript projects and
-				frameworks like Node.js, Next.js, Nuxt, and Vue — or any other setup where you want reliable
-				.env file comparison.
-			</p>
-		</div>
+<div class="space-y-6">
+	<Title fullText="dotenv-diff" />
+	<div class="mb-4 flex space-x-4">
+		<a href="https://www.npmjs.com/package/dotenv-diff" target="_blank" rel="noopener noreferrer">
+			<img src="https://img.shields.io/npm/v/dotenv-diff.svg" alt="npm version" />
+		</a>
+		<a href="https://www.npmjs.com/package/dotenv-diff" target="_blank" rel="noopener noreferrer">
+			<img src="https://img.shields.io/npm/dt/dotenv-diff.svg" alt="npm downloads" />
+		</a>
 	</div>
+
+	<p class="mb-8">
+		Scan your entire codebase to detect every environment variable reference and compares it against
+		your .env files. This makes it easy to spot unused, missing, and duplicate variables, and even
+		keep your codebase safe from accidental commits of secrets.
+	</p>
+</div>
+<div class="flex-shrink-0">
+	<ClickableImage
+		src="/demo.gif"
+		alt="Demo of dotenv-diff"
+		onClick={() => openModal('/demo.gif')}
+	/>
+	<p class="mt-8">
+		Optimized for SvelteKit. Also works well in modern JavaScript/TypeScript projects and frameworks
+		like Node.js, Next.js, Nuxt, and Vue — or any other setup where you want reliable .env file
+		comparison.
+	</p>
 </div>
 
 <BackNext backHref={null} nextHref="/installation" nextTitle="Installation" />

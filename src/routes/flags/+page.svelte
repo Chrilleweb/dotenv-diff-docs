@@ -195,6 +195,6 @@
 	</p>
 </div>
 
-<BackNext backHref="/compare" nextHref="/examples" nextTitle="Examples" />
+<BackNext backHref="/compare" nextHref="/v2.2.4" nextTitle="v2.2.4" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />

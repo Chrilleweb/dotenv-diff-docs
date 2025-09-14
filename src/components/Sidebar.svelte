@@ -10,11 +10,9 @@
 		{ title: 'Scan', href: '/scan' },
 		{ title: 'Flags', href: '/flags' },
 		{
-			title: 'Usage',
+			title: 'Versions',
 			children: [
-				{ title: 'Scan', href: '/scan' },
-				{ title: 'Compare', href: '/compare' },
-				{ title: 'Fix Issues', href: '/fix' }
+				{ title: '2.2.4 (newest)', href: '/v2.2.4' },
 			]
 		}
 	];
@@ -50,7 +48,7 @@
 			</span>
 						</button>
 						{#if dropdownOpen === item.title}
-							<ul class="ml-4 mt-2 space-y-1 text-sm text-gray-300">
+							<ul class="mt-2 space-y-1 text-sm text-gray-300">
 								{#each item.children as child}
 									<li>
 										<a
@@ -120,9 +118,12 @@
 								on:click={() => toggleDropdown(item.title)}
 							>
 								{item.title}
+											<span class="ml-2 text-sm">
+				{dropdownOpen === item.title ? '↑' : '↓'}
+			</span>
 							</button>
 							{#if dropdownOpen === item.title}
-								<ul class="ml-4 mt-2 space-y-1 text-sm text-gray-300">
+								<ul class="mt-2 space-y-1 text-sm text-gray-300">
 									{#each item.children as child}
 										<li>
 											<a
