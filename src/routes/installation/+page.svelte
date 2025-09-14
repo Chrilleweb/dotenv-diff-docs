@@ -4,6 +4,11 @@
 	import CodeBlock from '$components/CodeBlock.svelte';
 </script>
 
+<svelte:head>
+  <title>dotenv-diff - Installation</title>
+  <meta name="description" content="Install dotenv-diff to start scanning your codebase for environment variable issues." />
+</svelte:head>
+
 <div class="space-y-6">
 	<Title fullText="Installation" />
 
