@@ -5,8 +5,10 @@
 	let dropdownOpen: string | null = null;
 
 	const navItems = [
-		{ title: 'Home', href: '/' },
+		{ title: 'Introduction', href: '/' },
 		{ title: 'Installation', href: '/installation' },
+		{ title: 'Scan', href: '/scan' },
+		{ title: 'Flags', href: '/flags' },
 		{
 			title: 'Usage',
 			children: [
@@ -31,7 +33,7 @@
 </script>
 
 <!-- Desktop sidebar -->
-<nav class="fixed top-0 left-0 h-full w-64 bg-navbar-color p-8 text-white hidden lg:block z-40">
+<nav class="fixed top-0 left-0 h-full w-64 bg-navbar-color p-8 text-gray-300 hidden lg:block z-40">
 	<a href="/" class="text-xl font-semibold">dotenv-diff</a>
 	<ul class="mt-8 space-y-2">
 		{#each navItems as item}

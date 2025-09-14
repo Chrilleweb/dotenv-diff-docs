@@ -1,7 +1,6 @@
 <script lang="ts">
   import Title from '$components/Title.svelte';
   import BackNext from '$components/BackNext.svelte';
-  import CodeBlock from '$components/CodeBlock.svelte';
   import OpenImg from '$components/modals/OpenGif.svelte';
   import ClickableImage from '$components/ClickableImage.svelte';
   
