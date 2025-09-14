@@ -102,29 +102,29 @@
 				src="/compare.png"
 				alt="Scan report showing unused keys"
 				onClick={() => openModal('/compare.png')}
+                extraClasses="mt-4"
 			/>
 
 			<div class="space-y-3">
-				<div class="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-					<code class="rounded bg-orange-100 px-2 py-1 font-mono text-sm dark:bg-orange-900"
-						>--check-values</code
-					>
-					<p class="mt-2">
-						Compare actual values between .env and .env.example files if the example has values.
-					</p>
-				</div>
+					<p class="mt-2">Together with compare, check values between your .env* files</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --compare --check-values" />
 
-				<div class="rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
-					<code class="rounded bg-orange-100 px-2 py-1 font-mono text-sm dark:bg-orange-900"
-						>--allow-duplicates</code
-					>
-					<p class="mt-2">Suppress warnings about duplicate keys found in .env files.</p>
-				</div>
+
+				<p class="mt-2">Together with compare, you can allow duplicate values.</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --compare --allow-duplicates" />
 				<p class="mt-2">
 					Only run specific analysis categories. Available: missing, extra, empty, mismatch,
 					duplicate, gitignore.
 				</p>
-				<CodeBlock label="Terminal" command="dotenv-diff --only missing,duplicate" />
+				<CodeBlock label="Terminal" command="dotenv-diff --compare --only missing,duplicate" />
+                <p>By running --compare without having a .env or .env.example file, you will be prompted to create one.</p>
+                <ClickableImage
+				src="/compare-yes.png"
+				alt="Scan report showing unused keys"
+				onClick={() => openModal('/compare-yes.png')}
+			/>
+                <p class="mt-2">You can automatically answer "Yes" to all prompts and run non-interactively. in this scenario, you will not be prompted to create a .env from your existing .env.example file.</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --compare --yes" />
 			</div>
 		</section>
 
