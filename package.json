@@ -43,7 +43,6 @@
 	},
 	"dependencies": {
 		"@fontsource/rubik": "^5.2.6",
-		"@sveltejs/adapter-static": "^3.0.9",
 		"dotenv-diff": "^2.2.3"
 	}
 }
