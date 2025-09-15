@@ -13,4 +13,4 @@
 	});
 </script>
 
-<h1 class="mb-4 md:mt-0 mt-4 h-[3.5rem] text-4xl">{fullText}</h1>
+<h1 class="mb-2 md:mt-0 mt-8 h-[3.5rem] text-4xl">{fullText}</h1>
