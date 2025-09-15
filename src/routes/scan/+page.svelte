@@ -32,7 +32,7 @@
   <meta name="description" content="Scan your codebase with dotenv-diff to detect missing, unused, and duplicate environment variables." />
 </svelte:head>
 
-<div class="space-y-6">
+<div class="space-y-4">
   <Title fullText="Scan Usage" />
 
   <p>
