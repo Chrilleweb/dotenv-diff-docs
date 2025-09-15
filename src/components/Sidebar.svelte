@@ -98,7 +98,9 @@
 	<nav
 		class="fixed top-0 right-0 z-50 h-full w-64 bg-navbar-color p-8 text-white shadow-lg transition-transform duration-300 lg:hidden"
 	>
-		<a href="/" class="mb-8 block text-xl font-semibold">dotenv-diff</a>
+		<a on:click={() => (open = false)} href="/" class="mb-8 block text-xl font-semibold"
+			>dotenv-diff</a
+		>
 		<ul class="space-y-2">
 			{#each navItems as item}
 				<li>
