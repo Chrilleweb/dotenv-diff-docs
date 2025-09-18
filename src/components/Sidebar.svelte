@@ -10,7 +10,7 @@
 		{ title: 'Flags', href: '/flags' },
 		{
 			title: 'Versions',
-			children: [{ title: '2.2.4 (newest)', href: '/v2.2.4' }]
+			children: [{ title: '2.2.5 (newest)', href: '/v2.2.5' }, { title: '2.2.4', href: '/v2.2.4' }]
 		}
 	];
 
