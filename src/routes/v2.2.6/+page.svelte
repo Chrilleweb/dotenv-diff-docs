@@ -12,11 +12,11 @@
 	<Title fullText="Release Notes - v2.2.6" />
 
 	<p class="mt-8 mb-8 sm:mt-0">
-		Released on 2025-09-27. This version focuses on fixing more false warnings on potential secrets
+		Released on 2025-09-27. This version focuses on fixing false warnings on potential secrets
 		and improving maintainability of the codebase.
 	</p>
 	<ul class="list-inside list-disc space-y-6">
-		<li>Fix more false warning on potential secrets.</li>
+		<li>Fixed false warning on potential secrets.</li>
 		<li>Refactored codebase for improved maintainability.</li>
 		<li>Added HTTP URL detected message to potential secrets.</li>
 		<li>
@@ -26,4 +26,4 @@
 	</ul>
 </div>
 
-<BackNext backHref="/v2.2.5" nextHref={null} nextTitle="Next" />
+<BackNext backHref="/v2.2.5" nextHref="/v2.2.7" nextTitle="v2.2.7" />
