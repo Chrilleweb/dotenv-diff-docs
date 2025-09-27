@@ -131,61 +131,81 @@
 
 		<section>
 			<h2 class="mb-3 text-xl">Automation & CI/CD</h2>
-					<p class="my-2">
-						Run in CI mode: non-interactive and never creates files. Perfect for continuous
-						integration.
-					</p>
-                    <CodeBlock label="Terminal" command="dotenv-diff --ci" />
-					<p class="my-2">
-						Enable strict mode - the process will fail on warnings, not just errors.
-					</p>
-                    <CodeBlock label="Terminal" command="dotenv-diff --strict" />
+			<p class="my-2">
+				Run in CI mode: non-interactive and never creates files. Perfect for continuous integration.
+			</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --ci" />
+			<p class="my-2">Enable strict mode - the process will fail on warnings, not just errors.</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --strict" />
 
-					<p class="my-2">
-						Automatically fix common issues like removing duplicates and adding missing keys.
-					</p>
-                    <CodeBlock label="Terminal" command="dotenv-diff --fix" />
+			<p class="my-2">
+				Automatically fix common issues like removing duplicates and adding missing keys.
+			</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --fix" />
 		</section>
 
 		<section>
 			<h2 class="mb-3 text-xl">Output Control</h2>
 
-					<p class="my-2">Output results in JSON format instead of human-readable text.</p>
-                    <CodeBlock label="Terminal" command="dotenv-diff --json" />
+			<p class="my-2">Output results in JSON format instead of human-readable text.</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --json" />
 
-					<p class="my-2">Disable colored output for terminals that don't support colors.</p>
-                    <CodeBlock label="Terminal" command="dotenv-diff --no-color" />
+			<p class="my-2">Disable colored output for terminals that don't support colors.</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --no-color" />
 
-					<p class="my-2">Hide variables that are defined in .env but not used in your codebase.</p>
-                    <CodeBlock label="Terminal" command="dotenv-diff --no-show-unused" />
+			<p class="my-2">Hide variables that are defined in .env but not used in your codebase.</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --no-show-unused" />
 
-					<p class="my-2">Hide the statistics summary at the end of the report.</p>
-                    <CodeBlock label="Terminal" command="dotenv-diff --no-show-stats" />
+			<p class="my-2">Hide the statistics summary at the end of the report.</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --no-show-stats" />
 		</section>
 
 		<section>
 			<h2 class="mb-3 text-xl">Security</h2>
 
-					<p class="my-2">
-						Disable potential secret detection during codebase scanning (secret detection is enabled by
-						default).
-					</p>
-                    <CodeBlock label="Terminal" command="dotenv-diff --no-secrets" />
-
+			<p class="my-2">
+				Disable potential secret detection during codebase scanning (secret detection is enabled by
+				default).
+			</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --no-secrets" />
+			<p class="my-2">
+				If you only want to ignore a specific line in your codebase from potential secrets
+				detection, you can add // dotenv-diff-ignore comment at the end of the line:
+			</p>
+			<CodeBlock
+				label="example.ts"
+				command="const hardcodedURL = 'https://thisShouldBeIgnored.com'; // dotenv-diff-ignore"
+			/>
+			<p class="my-2">
+				Note: This will only ignore potential secrets warnings for the specific line it is added to.
+				Other errors on the same line will still be reported:
+			</p>
+			<CodeBlock
+				label="example.ts"
+				command="const api = process.env.API_URL || 'https://api.dotenv-diff.com'; // dotenv-diff-ignore"
+			/>
+			<p class="my-2">
+				In the above example, only the potential secret warning for the hardcoded URL will be
+				ignored. The missing variable warning for API_URL will still be reported if it is not
+				defined in .env.
+			</p>
 		</section>
 
 		<section>
 			<h2 class="mb-3 text-xl">Common Flag Combinations</h2>
 
-					<p class="my-2">CI/CD Pipeline:</p>
-                    <p class="my-2">This command sets up a CI/CD pipeline with strict mode and compare it to your .env.example file.</p>
-					<CodeBlock label="Terminal" command="dotenv-diff --ci --strict --example .env.example" />
+			<p class="my-2">CI/CD Pipeline:</p>
+			<p class="my-2">
+				This command sets up a CI/CD pipeline with strict mode and compare it to your .env.example
+				file.
+			</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --ci --strict --example .env.example" />
 
-                    <p class="my-2">This command works well in a turbo monorepo setup.</p>
-                    <CodeBlock
-                     label="Terminal"
-                     command='dotenv-diff --include-files "./src/**/*,../../packages/**/*"'
-                      />
+			<p class="my-2">This command works well in a turbo monorepo setup.</p>
+			<CodeBlock
+				label="Terminal"
+				command='dotenv-diff --include-files "./src/**/*,../../packages/**/*"'
+			/>
 		</section>
 	</div>
 
