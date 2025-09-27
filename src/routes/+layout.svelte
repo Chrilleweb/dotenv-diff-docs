@@ -3,9 +3,9 @@
 	import '../app.css';
 </script>
 
-<div class="app bg-background-color text-text-color min-h-screen leading-8 max-w-[1600px] mx-auto">
+<div class="app mx-auto min-h-screen max-w-[1600px] bg-background-color leading-8 text-text-color">
 	<Sidebar />
-	<main class="ml-0 lg:ml-64 px-4 sm:px-8 md:px-40 lg:px-36 py-16 transition-all duration-300">
+	<main class="ml-0 px-4 py-16 transition-all duration-300 sm:px-8 md:px-40 lg:ml-64 lg:px-36">
 		<slot />
 	</main>
 </div>

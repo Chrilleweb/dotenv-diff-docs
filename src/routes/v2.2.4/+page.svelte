@@ -11,22 +11,22 @@
 <div class="space-y-6">
 	<Title fullText="Release Notes - v2.2.4" />
 
-	<p class="mb-8 mt-8 sm:mt-0">
+	<p class="mt-8 mb-8 sm:mt-0">
 		Released on 2025-09-14. This version focuses on fixing issues with scan results and improving
 		accuracy of the reported statistics. No breaking changes were introduced.
 	</p>
 	<ul class="list-inside list-disc space-y-6">
 		<li>
-			Corrected a bug where the found variable count did not display when there were
-			missing variables in .env.
+			Corrected a bug where the found variable count did not display when there were missing
+			variables in .env.
 		</li>
 		<li>
-			Environment variables found in commented out code are now ignored — they no longer
-			count towards “Found X unique environment variables in use”.
+			Environment variables found in commented out code are now ignored — they no longer count
+			towards “Found X unique environment variables in use”.
 		</li>
 		<li>
-			Fixed a bug where the scanner incorrectly reported
-			"no unused variables" when no variables were found at all.
+			Fixed a bug where the scanner incorrectly reported "no unused variables" when no variables
+			were found at all.
 		</li>
 	</ul>
 </div>
