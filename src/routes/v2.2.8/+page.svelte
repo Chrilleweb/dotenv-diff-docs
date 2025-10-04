@@ -12,7 +12,7 @@
 	<Title fullText="Release Notes - v2.2.8" />
 
 	<p class="mt-8 mb-8 sm:mt-0">
-		Released on 2025-10-04. This version focuses on fixing Fix .env is not ignored by git when using
+		Released on 2025-10-04. This version focuses on fixing .env not ignored by git when using
 		--fix flag. and improving maintainability of the codebase.
 	</p>
 	<ul class="list-inside list-disc space-y-6">
