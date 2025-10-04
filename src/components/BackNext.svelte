@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let backHref: string | null = null; // null = disabled
+	export let backTitle: string = 'Back';
 	export let nextHref: string | null = null; // null = disabled
 	export let nextTitle: string | null = null; // null = disabled
 </script>
@@ -11,7 +12,7 @@
 			href={backHref}
 			class="rounded-md border border-gray-300 px-4 py-2 text-gray-700 transition hover:bg-gray-100"
 		>
-			← Back
+			← {backTitle}
 		</a>
 	{:else}
 		<span

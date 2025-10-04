@@ -26,4 +26,4 @@
 	</ul>
 </div>
 
-<BackNext backHref="/v2.2.5" nextHref="/v2.2.7" nextTitle="v2.2.7" />
+<BackNext backHref="/v2.2.5" backTitle="v2.2.5" nextHref="/v2.2.7" nextTitle="v2.2.7" />
