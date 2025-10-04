@@ -215,6 +215,6 @@
 	</p>
 </div>
 
-<BackNext backHref="/scan" nextHref="/v2.2.7" nextTitle="v2.2.7" />
+<BackNext backHref="/scan" nextHref="/v2.2.8" nextTitle="v2.2.8" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />
