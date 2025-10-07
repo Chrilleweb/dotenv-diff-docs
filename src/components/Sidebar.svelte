@@ -11,6 +11,10 @@
 			title: 'Configuration',
 			href: '/configuration'
 		},
+		{
+			title: 'Ignoring Comments',
+			href: '/ignore-comments'
+		},
 		{ title: 'Flags', href: '/flags' },
 		{
 			title: 'Versions',
