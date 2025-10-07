@@ -5,10 +5,14 @@
 	let copied = false;
 
 	async function copyToClipboard() {
-		await navigator.clipboard.writeText(command);
+		await navigator.clipboard.writeText(command.trim());
 		copied = true;
 		setTimeout(() => (copied = false), 2000);
 	}
+
+	// Split command into lines and check if it's multiline
+	$: lines = command.trim().split('\n');
+	$: isMultiline = lines.length > 1;
 </script>
 
 <div class="rounded-xl bg-navbar-color">
@@ -27,13 +31,17 @@
 	</div>
 
 	<div class="px-4 pb-6 text-sm">
-		<code>
-			{#if command.includes(' ')}
-				<span class="text-pink-400">{command.split(' ')[0]}</span>{' '}
-				<span class="text-sky-400">{command.split(' ').slice(1).join(' ')}</span>
-			{:else}
-				<span class="text-sky-400">{command}</span>
-			{/if}
-		</code>
+		{#if isMultiline}
+			<pre class="overflow-x-auto"><code class="text-sky-400">{command.trim()}</code></pre>
+		{:else}
+			<code>
+				{#if command.includes(' ')}
+					<span class="text-pink-400">{command.split(' ')[0]}</span>{' '}
+					<span class="text-sky-400">{command.split(' ').slice(1).join(' ')}</span>
+				{:else}
+					<span class="text-sky-400">{command}</span>
+				{/if}
+			</code>
+		{/if}
 	</div>
 </div>

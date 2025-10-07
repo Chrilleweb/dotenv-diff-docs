@@ -15,7 +15,7 @@
 		Released on 2025-09-27. This version focuses on fixing false warnings on potential secrets
 		and improving maintainability of the codebase.
 	</p>
-	<ul class="list-inside list-disc space-y-6">
+	<ul class="list-inside list-disc space-y-4">
 		<li>Fixed false warning on potential secrets.</li>
 		<li>Refactored codebase for improved maintainability.</li>
 		<li>Added HTTP URL detected message to potential secrets.</li>

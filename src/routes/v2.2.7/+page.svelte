@@ -17,7 +17,7 @@
 		ignore specific lines using the // dotenv-diff-ignore comment and adding warnings when .env is not
 		ignored by .gitignore.
 	</p>
-	<ul class="list-inside list-disc space-y-6">
+	<ul class="list-inside list-disc space-y-4">
 		<li>Updated dependencies for <strong>Chalk</strong> and <strong>Commander</strong>.</li>
 		<li>Fixed --strict error output to console when no warnings are found.</li>
 		<li>Added warning on .env not ignored by .gitignore on default.</li>

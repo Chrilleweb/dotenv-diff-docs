@@ -15,7 +15,7 @@
 		Released on 2025-09-14. This version focuses on fixing issues with scan results and improving
 		accuracy of the reported statistics. No breaking changes were introduced.
 	</p>
-	<ul class="list-inside list-disc space-y-6">
+	<ul class="list-inside list-disc space-y-4">
 		<li>
 			Corrected a bug where the found variable count did not display when there were missing
 			variables in .env.

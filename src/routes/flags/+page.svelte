@@ -40,7 +40,7 @@
 	<Title fullText="Command Line Flags" />
 
 	<p>
-		dotenv-diff supports many command line flags to customize its behavior. Here's a complete
+	Just like configuration, dotenv-diff supports many command line flags to customize its behavior. Here's a complete
 		reference of all available options:
 	</p>
 

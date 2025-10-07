@@ -15,10 +15,10 @@
 		Released on 2025-10-04. This version focuses on fixing .env not ignored by git when using
 		--fix flag. and improving maintainability of the codebase.
 	</p>
-	<ul class="list-inside list-disc space-y-6">
+	<ul class="list-inside list-disc space-y-4">
 		<li>Fix .env is not ignored by git when using --fix flag.</li>
 		<li>Refactored codebase for improved maintainability.</li>
 	</ul>
 </div>
 
-<BackNext backHref="/v2.2.7" backTitle="v2.2.7" nextHref={null} nextTitle="Next" />
+<BackNext backHref="/v2.2.7" backTitle="v2.2.7" nextHref="/v2.3.0" nextTitle="v2.3.0" />
