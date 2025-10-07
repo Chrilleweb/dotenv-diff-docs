@@ -15,7 +15,7 @@
 <div class="space-y-6">
 	<Title fullText="Ignoring Lines and Sections" />
 
-	<p class="my-4">
+	<p class="mt-8 mb-8 sm:mt-0">
 		dotenv-diff can skip certain lines or code sections from being flagged during secret detection.
 		This is helpful when you know a specific URL or key is safe to include in your source code.
 	</p>
