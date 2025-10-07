@@ -113,6 +113,12 @@
 				duplicate, gitignore.
 			</p>
 			<CodeBlock label="Terminal" command="dotenv-diff --compare --only missing,duplicate" />
+
+			<p class="my-2">
+				If you want to scan your project without comparing against any .env files, use:
+			</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --no-compare" />
+
 			<p class="my-2">
 				By running --compare without having a .env or .env.example file, you will be prompted to
 				create one.
@@ -123,7 +129,7 @@
 				onClick={() => openModal('/compare-yes.png')}
 			/>
 			<p class="my-2">
-				You can automatically answer "Yes" to all prompts and run non-interactively. in this
+				You can automatically answer "Yes" to all prompts and run non-interactively. In this
 				scenario, you will not be prompted to create a .env from your existing .env.example file.
 			</p>
 			<CodeBlock label="Terminal" command="dotenv-diff --compare --yes" />
@@ -168,27 +174,49 @@
 				default).
 			</p>
 			<CodeBlock label="Terminal" command="dotenv-diff --no-secrets" />
+
+			<p class="my-2">
+				You can also ignore specific URLs from being flagged during secret scanning using
+				<code>--ignore-urls</code>.
+			</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --ignore-urls https://safe.com,https://cdn.local" />
+			<p class="my-2">
+				This is useful when your project contains public or whitelisted URLs that should not trigger
+				false positive secret warnings.
+			</p>
+
 			<p class="my-2">
 				If you only want to ignore a specific line in your codebase from potential secrets
-				detection, you can add // dotenv-diff-ignore comment at the end of the line:
+				detection, you can add <code>// dotenv-diff-ignore</code> comment at the end of the line:
 			</p>
 			<CodeBlock
 				label="example.ts"
 				command="const hardcodedURL = 'https://thisShouldBeIgnored.com'; // dotenv-diff-ignore"
 			/>
+		</section>
+
+		<section>
+			<h2 class="mb-3 text-xl">Configuration & Initialization</h2>
+
 			<p class="my-2">
-				Note: This will only ignore potential secrets warnings for the specific line it is added to.
-				Other errors on the same line will still be reported:
+				Create a sample configuration file in your project root using:
 			</p>
+			<CodeBlock label="Terminal" command="dotenv-diff --init" />
+
+			<p class="my-2">
+				This generates a <code>dotenv-diff.config.json</code> file with default settings, which you
+				can edit and commit to version control.
+			</p>
+
 			<CodeBlock
-				label="example.ts"
-				command="const api = process.env.API_URL || 'https://api.dotenv-diff.com'; // dotenv-diff-ignore"
+				label="dotenv-diff.config.json"
+				command={`{
+  "strict": false,
+  "example": ".env.example",
+  "ignore": ["NODE_ENV", "VITE_MODE"],
+  "ignoreUrls": ["https://example.com"]
+}`}
 			/>
-			<p class="my-2">
-				In the above example, only the potential secret warning for the hardcoded URL will be
-				ignored. The missing variable warning for API_URL will still be reported if it is not
-				defined in .env.
-			</p>
 		</section>
 
 		<section>
