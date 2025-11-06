@@ -40,7 +40,7 @@
 
 	<p>
 		By default, running dotenv-diff will scan your entire codebase to detect every environment
-		variable reference. It wil automatically compare against your .env file.
+		variable reference. It will automatically compare against your .env file.
 	</p>
 
 	<p>
