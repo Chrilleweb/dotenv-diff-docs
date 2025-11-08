@@ -243,6 +243,6 @@
 	</p>
 </div>
 
-<BackNext backHref="/ignore-comments" backTitle="Ignore Comments" nextHref="/v2.3.1" nextTitle="v2.3.1" />
+<BackNext backHref="/ignore-comments" backTitle="Ignore Comments" nextHref="/v2.3.2" nextTitle="v2.3.2" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />
