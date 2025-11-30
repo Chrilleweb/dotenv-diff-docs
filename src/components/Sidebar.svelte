@@ -19,7 +19,8 @@
 		{
 			title: 'Versions',
 			children: [
-				{ title: '2.3.2 (newest)', href: '/v2.3.2' },
+				{ title: '2.3.4 (newest)', href: '/v2.3.4' },
+				{ title: '2.3.2', href: '/v2.3.2' },
 				{ title: '2.3.1', href: '/v2.3.1' },
 				{ title: '2.3.0', href: '/v2.3.0' },
 				{ title: '2.2.8', href: '/v2.2.8' },
