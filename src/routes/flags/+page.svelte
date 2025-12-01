@@ -243,6 +243,6 @@
 	</p>
 </div>
 
-<BackNext backHref="/ignore-comments" backTitle="Ignore Comments" nextHref="/v2.3.4" nextTitle="v2.3.4" />
+<BackNext backHref="/sveltekit" backTitle="SvelteKit" nextHref="/v2.3.5" nextTitle="v2.3.5" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />

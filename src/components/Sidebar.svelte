@@ -15,11 +15,13 @@
 			title: 'Ignoring Comments',
 			href: '/ignore-comments'
 		},
+		{ title: 'SvelteKit', href: '/sveltekit' },
 		{ title: 'Flags', href: '/flags' },
 		{
 			title: 'Versions',
 			children: [
-				{ title: '2.3.4 (newest)', href: '/v2.3.4' },
+				{title : '2.3.5 (newest)', href: '/v2.3.5' },
+				{ title: '2.3.4', href: '/v2.3.4' },
 				{ title: '2.3.2', href: '/v2.3.2' },
 				{ title: '2.3.1', href: '/v2.3.1' },
 				{ title: '2.3.0', href: '/v2.3.0' },

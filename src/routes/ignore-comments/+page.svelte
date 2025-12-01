@@ -76,4 +76,4 @@
 	</section>
 </div>
 
-<BackNext backHref="/scan" backTitle="Scan" nextHref="/flags" nextTitle="Flags" />
+<BackNext backHref="/scan" backTitle="Scan" nextHref="/sveltekit" nextTitle="SvelteKit" />
