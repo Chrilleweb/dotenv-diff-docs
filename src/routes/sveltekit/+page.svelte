@@ -13,9 +13,9 @@
 </svelte:head>
 
 <div class="space-y-6">
-	<Title fullText="SvelteKit Environment Variable Rules" />
+	<Title fullText="SvelteKit warnings" />
 
-	<p class="mt-8 mb-8 sm:mt-0">
+	<p class="mb-8 sm:mt-0">
 		dotenv-diff includes a set of SvelteKit-specific rules designed to detect invalid or unsafe
 		environment variable usage. SvelteKit has strict conventions around which variables are public,
 		which are private, and how they must be accessed. This page explains all warnings that
