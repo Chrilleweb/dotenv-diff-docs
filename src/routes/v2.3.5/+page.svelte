@@ -57,6 +57,6 @@
 	</ul>
 </div>
 
-<BackNext backHref="/v2.3.4" backTitle="v2.3.4" nextHref={null} nextTitle="Next" />
+<BackNext backHref="/v2.3.4" backTitle="v2.3.4" nextHref="/v2.3.6" nextTitle="v2.3.6" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />

@@ -36,7 +36,7 @@
 	</section>
 
 	<section>
-		<h2 class="mb-3 text-xl">⚙️ Example Configuration</h2>
+		<h2 class="mb-3 text-xl">Example Configuration</h2>
 
 		<CodeBlock
 			label="dotenv-diff.config.json"
@@ -247,10 +247,10 @@
 		<ul class="list-disc list-inside space-y-2">
 			<li>All options are optional; dotenv-diff uses sensible defaults when omitted.</li>
 			<li>CLI flags always take precedence over configuration values.</li>
-			<li>🧩 Loaded dotenv-diff.config.json when a config file is detected.</li>
+			<li>Load dotenv-diff.config.json if it's detected.</li>
 			<li>The file must be valid JSON</li>
 		</ul>
 	</section>
 </div>
 
-<BackNext backHref="/scan" backTitle="Scan" nextHref="/ignore-comments" nextTitle="Ignore Comments" />
+<BackNext backHref="/flags" backTitle="Flags" nextHref="/sveltekit" nextTitle="SvelteKit" />

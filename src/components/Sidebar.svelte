@@ -7,20 +7,26 @@
 	const navItems = [
 		{ title: 'Installation', href: '/installation' },
 		{ title: 'Scan', href: '/scan' },
+		{ title: 'Flags', href: '/flags' },
 		{
 			title: 'Configuration',
 			href: '/configuration'
+		},
+		{ title: 'Frameworks',
+			children: [
+				{ title: 'Sveltekit', href: '/sveltekit' },
+				{ title: 'Next.js', href: '/nextjs' },
+			]
 		},
 		{
 			title: 'Ignoring Comments',
 			href: '/ignore-comments'
 		},
-		{ title: 'SvelteKit', href: '/sveltekit' },
-		{ title: 'Flags', href: '/flags' },
 		{
 			title: 'Versions',
 			children: [
-				{title : '2.3.5 (newest)', href: '/v2.3.5' },
+				{ title: '2.3.6 (newest)', href: '/v2.3.6' },
+				{ title: '2.3.5', href: '/v2.3.5' },
 				{ title: '2.3.4', href: '/v2.3.4' },
 				{ title: '2.3.2', href: '/v2.3.2' },
 				{ title: '2.3.1', href: '/v2.3.1' },

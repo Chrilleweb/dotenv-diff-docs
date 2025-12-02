@@ -243,6 +243,6 @@
 	</p>
 </div>
 
-<BackNext backHref="/sveltekit" backTitle="SvelteKit" nextHref="/v2.3.5" nextTitle="v2.3.5" />
+<BackNext backHref="/scan" backTitle="Scan" nextHref="/configuration" nextTitle="Configuration" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />

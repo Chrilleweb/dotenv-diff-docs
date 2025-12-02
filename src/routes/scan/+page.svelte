@@ -89,6 +89,6 @@
 	<p>This helps keep your environment clean and production-ready, without guesswork.</p>
 </div>
 
-<BackNext backHref="/installation" backTitle="Installation" nextHref="/configuration" nextTitle="Configuration" />
+<BackNext backHref="/installation" backTitle="Installation" nextHref="/flags" nextTitle="Flags" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />

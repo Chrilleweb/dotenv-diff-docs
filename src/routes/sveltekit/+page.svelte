@@ -192,4 +192,4 @@
 	</section>
 </div>
 
-<BackNext backHref="/scan" backTitle="Scan" nextHref="/flags" nextTitle="Flags" />
+<BackNext backHref="/configuration" backTitle="Configuration" nextHref="/nextjs" nextTitle="Next.js" />

@@ -52,8 +52,8 @@
 		onClick={() => openModal('/demo.gif')}
 	/>
 	<p class="mt-8">
-		Optimized for SvelteKit. Also works well in modern JavaScript/TypeScript projects and frameworks
-		like Node.js, Next.js, Nuxt, and Vue — or any other setup where you want reliable .env file
+		Optimized for SvelteKit and Next.js. Also works well in modern JavaScript/TypeScript projects and frameworks
+		like Node.js, Nuxt, and Vue — or any other setup where you want reliable .env file
 		comparison.
 	</p>
 </div>
