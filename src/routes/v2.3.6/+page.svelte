@@ -20,4 +20,4 @@
 	</ul>
 </div>
 
-<BackNext backHref="/v2.3.0" backTitle="v2.3.0" nextHref="/v2.3.2" nextTitle="v2.3.2" />
+<BackNext backHref="/v2.3.5" backTitle="v2.3.5" nextHref={null} nextTitle="Next" />
