@@ -86,6 +86,27 @@
 		onClick={() => openModal('/scan-secrets.png')}
 	/>
 
+	<p>Warns for environment variables logged to console in your codebase</p>
+	<ClickableImage
+		src="/consoleLogWarning.png"
+		alt="Console log warning in scan report"
+		onClick={() => openModal('/consoleLogWarning.png')}
+	/>
+
+	<p>Warns about potential secrets in your .env.example file</p>
+	<ClickableImage
+		src="/potential-example.png"
+		alt="Potential secrets warning in .env.example file"
+		onClick={() => openModal('/potential-example.png')}
+	/>
+
+	<p>Framework-specific warnings for SvelteKit & Next.js eg.</p>
+	<ClickableImage
+		src="/sveltekit-warning.png"
+		alt="SvelteKit specific warning in scan report"
+		onClick={() => openModal('/sveltekit-warning.png')}
+	/>
+
 	<p>This helps keep your environment clean and production-ready, without guesswork.</p>
 </div>
 
