@@ -107,6 +107,20 @@
 		onClick={() => openModal('/sveltekit-warning.png')}
 	/>
 
+	<p>Warns for environment variables not using uppercase letters in your codebase</p>
+	<ClickableImage
+		src="/uppercase-warning.png"
+		alt="Env variables not using uppercase warning in scan report"
+		onClick={() => openModal('/uppercase-warning.png')}
+	/>
+
+	<p>Given you a health score to quickly assess the overall quality of your environment variables</p>
+	<ClickableImage
+		src="/health-score.png"
+		alt="Health score in scan report"
+		onClick={() => openModal('/health-score.png')}
+	/>
+
 	<p>This helps keep your environment clean and production-ready, without guesswork.</p>
 </div>
 

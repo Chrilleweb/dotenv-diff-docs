@@ -230,12 +230,19 @@
 						<td class="py-2 px-3">URLs to skip in secret detection.</td>
 						<td class="py-2 px-3"><code>--ignore-urls</code></td>
 					</tr>
-
-					<tr>
-						<td class="py-2 px-3"><code>noCompare</code></td>
+					
+					<tr class="border-b border-gray-800">
+						<td class="py-2 px-3"><code>init</code></td>
 						<td class="py-2 px-3">boolean</td>
-						<td class="py-2 px-3">Run scan without comparing against any .env files.</td>
-						<td class="py-2 px-3"><code>--no-compare</code></td>
+						<td class="py-2 px-3">Create a sample configuration file.</td>
+						<td class="py-2 px-3"><code>--init</code></td>
+					</tr>
+
+					<tr class="border-b border-gray-800">
+						<td class="py-2 px-3"><code>uppercaseKeys</code></td>
+						<td class="py-2 px-3">boolean</td>
+						<td class="py-2 px-3">Should env variables sent a warning if not uppercase.</td>
+						<td class="py-2 px-3"><code>--uppercase-keys</code></td>
 					</tr>
 				</tbody>
 			</table>

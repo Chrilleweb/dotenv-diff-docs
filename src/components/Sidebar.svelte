@@ -12,10 +12,11 @@
 			title: 'Configuration',
 			href: '/configuration'
 		},
-		{ title: 'Frameworks',
+		{
+			title: 'Frameworks',
 			children: [
 				{ title: 'Sveltekit', href: '/sveltekit' },
-				{ title: 'Next.js', href: '/nextjs' },
+				{ title: 'Next.js', href: '/nextjs' }
 			]
 		},
 		{
@@ -25,7 +26,8 @@
 		{
 			title: 'Versions',
 			children: [
-				{ title: '2.3.7 (newest)', href: '/v2.3.7' },
+				{ title: '2.3.8 (newset)', href: '/v2.3.8' },
+				{ title: '2.3.7', href: '/v2.3.7' },
 				{ title: '2.3.6', href: '/v2.3.6' },
 				{ title: '2.3.5', href: '/v2.3.5' },
 				{ title: '2.3.4', href: '/v2.3.4' },

@@ -115,11 +115,6 @@
 			<CodeBlock label="Terminal" command="dotenv-diff --compare --only missing,duplicate" />
 
 			<p class="my-2">
-				If you want to scan your project without comparing against any .env files, use:
-			</p>
-			<CodeBlock label="Terminal" command="dotenv-diff --no-compare" />
-
-			<p class="my-2">
 				By running --compare without having a .env or .env.example file, you will be prompted to
 				create one.
 			</p>
