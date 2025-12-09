@@ -3,6 +3,7 @@
 	import BackNext from '$components/BackNext.svelte';
 	import OpenImg from '$components/modals/OpenGif.svelte';
 	import ClickableImage from '$components/ClickableImage.svelte';
+	import CodeBlock from '$components/CodeBlock.svelte';
 
 	let showModal = false;
 	let currentImageSrc = '';
@@ -120,6 +121,31 @@
 		alt="Health score in scan report"
 		onClick={() => openModal('/health-score.png')}
 	/>
+
+	<p>Warns for environment variables that are expired based on expiration comments in your (.env) files</p>
+			<CodeBlock
+			label="Terminal"
+			command="# @expires: 2024-12-31
+API_KEY=
+
+# @expires: 2025-12-11
+DATABASE_URL=
+
+# @expires: 2025-12-31
+SECRET_KEY="
+		/>
+	<ClickableImage
+			src="/expire-warning.png"
+			alt="Expiration date warning in scan report"
+			onClick={() => openModal('/expire-warning.png')}
+		/>
+
+	<p>Warns for inconsistent naming of environment variables in your codebase</p>
+	<ClickableImage
+			src="/inconsistent-naming.png"
+			alt="Inconsistent naming warning in scan report"
+			onClick={() => openModal('/inconsistent-naming.png')}
+		/>
 
 	<p>This helps keep your environment clean and production-ready, without guesswork.</p>
 </div>

@@ -244,6 +244,20 @@
 						<td class="py-2 px-3">Should env variables sent a warning if not uppercase.</td>
 						<td class="py-2 px-3"><code>--uppercase-keys</code></td>
 					</tr>
+
+					<tr class="border-b border-gray-800">
+						<td class="py-2 px-3"><code>expire Warnings</code></td>
+						<td class="py-2 px-3">boolean</td>
+						<td class="py-2 px-3">Enable expiration date warnings for environment variables</td>
+						<td class="py-2 px-3"><code>--expire-warnings</code></td>
+					</tr>
+
+					<tr class="border-b border-gray-800">
+						<td class="py-2 px-3"><code>inconsistentNamingWarnings</code></td>
+						<td class="py-2 px-3">boolean</td>
+						<td class="py-2 px-3">Enable inconsistent naming warnings for environment variables</td>
+						<td class="py-2 px-3"><code>--inconsistent-naming-warnings</code></td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
