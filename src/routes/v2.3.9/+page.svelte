@@ -73,6 +73,6 @@ SECRET_KEY="
 	</ul>
 </div>
 
-<BackNext backHref="/v2.3.8" backTitle="v2.3.8" nextHref={null} nextTitle="Next" />
+<BackNext backHref="/v2.3.8" backTitle="v2.3.8" nextHref="/v2.3.10" nextTitle="v2.3.10" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />

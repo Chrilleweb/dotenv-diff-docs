@@ -19,6 +19,7 @@
 				{ title: 'Next.js', href: '/nextjs' }
 			]
 		},
+		{ title: 't3-env', href: '/t3-env' },
 		{
 			title: 'Ignoring Comments',
 			href: '/ignore-comments'
@@ -26,7 +27,8 @@
 		{
 			title: 'Versions',
 			children: [
-				{ title: '2.3.9 (newest)', href: '/v2.3.9' },
+				{ title: '2.3.10 (newest)', href: '/v2.3.10' },
+				{ title: '2.3.9', href: '/v2.3.9' },
 				{ title: '2.3.8', href: '/v2.3.8' },
 				{ title: '2.3.7', href: '/v2.3.7' },
 				{ title: '2.3.6', href: '/v2.3.6' },
@@ -36,10 +38,7 @@
 				{ title: '2.3.1', href: '/v2.3.1' },
 				{ title: '2.3.0', href: '/v2.3.0' },
 				{ title: '2.2.8', href: '/v2.2.8' },
-				{ title: '2.2.7', href: '/v2.2.7' },
-				{ title: '2.2.6', href: '/v2.2.6' },
-				{ title: '2.2.5', href: '/v2.2.5' },
-				{ title: '2.2.4', href: '/v2.2.4' }
+				{ title: '2.2.7', href: '/v2.2.7' }
 			]
 		}
 	];
