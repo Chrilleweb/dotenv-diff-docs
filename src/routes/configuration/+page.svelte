@@ -258,6 +258,12 @@
 						<td class="py-2 px-3">Enable inconsistent naming warnings for environment variables</td>
 						<td class="py-2 px-3"><code>--inconsistent-naming-warnings</code></td>
 					</tr>
+					<tr class="border-b border-gray-800">
+						<td class="py-2 px-3"><code>t3env</code></td>
+						<td class="py-2 px-3">boolean</td>
+						<td class="py-2 px-3">Enable inconsistent naming warnings for environment variables</td>
+						<td class="py-2 px-3"><code>--no-t3env</code></td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
@@ -274,4 +280,4 @@
 	</section>
 </div>
 
-<BackNext backHref="/flags" backTitle="Flags" nextHref="/sveltekit" nextTitle="SvelteKit" />
+<BackNext backHref="/installation" backTitle="Installation" nextHref="/sveltekit" nextTitle="SvelteKit" />

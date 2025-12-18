@@ -29,4 +29,4 @@
 	<p class="mt-6">Simply run dotenv-diff in your terminal, it's that easy!</p>
 </div>
 
-<BackNext backHref="/" backTitle="dotenv-diff" nextHref="/scan" nextTitle="Scan" />
+<BackNext backHref="/" backTitle="dotenv-diff" nextHref="/configuration" nextTitle="Configuration" />

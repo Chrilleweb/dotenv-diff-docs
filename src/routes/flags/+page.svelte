@@ -238,6 +238,6 @@
 	</p>
 </div>
 
-<BackNext backHref="/scan" backTitle="Scan" nextHref="/configuration" nextTitle="Configuration" />
+<BackNext backHref="/installation" backTitle="Installation" nextHref="/configuration" nextTitle="Configuration" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />

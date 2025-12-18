@@ -6,8 +6,8 @@
 
 	const navItems = [
 		{ title: 'Installation', href: '/installation' },
-		{ title: 'Scan', href: '/scan' },
-		{ title: 'Flags', href: '/flags' },
+		//{ title: 'Scan', href: '/scan' },
+		//{ title: 'Flags', href: '/flags' },
 		{
 			title: 'Configuration',
 			href: '/configuration'
@@ -27,7 +27,8 @@
 		{
 			title: 'Versions',
 			children: [
-				{title : 'v2.3.11 (newest)', href: '/v2.3.11' },
+				{ title: 'v2.3.12 (newest)', href: '/v2.3.12' },
+				{ title: 'v2.3.11', href: '/v2.3.11' },
 				{ title: '2.3.10', href: '/v2.3.10' },
 				{ title: '2.3.9', href: '/v2.3.9' },
 				{ title: '2.3.8', href: '/v2.3.8' },

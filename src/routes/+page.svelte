@@ -47,9 +47,9 @@
 </div>
 <div class="flex-shrink-0">
 	<ClickableImage
-		src="/demo.gif"
+		src="/demo3.gif"
 		alt="Demo of dotenv-diff"
-		onClick={() => openModal('/demo.gif')}
+		onClick={() => openModal('/demo3.gif')}
 	/>
 	<p class="mt-8">
 		Optimized for SvelteKit and Next.js. Also works well in modern JavaScript/TypeScript projects and frameworks
@@ -60,4 +60,4 @@
 
 <BackNext backHref={null} nextHref="/installation" nextTitle="Installation" />
 
-<OpenImg open={showModal} onClose={closeModal} imgSrc="/demo.gif" />
+<OpenImg open={showModal} onClose={closeModal} imgSrc="/demo3.gif" />
