@@ -32,7 +32,7 @@
 
 		<CodeBlock
 			label="+page.ts"
-			command={`console.log(import.meta.env.PUBLIC_URL);`}
+			command={`import.meta.env.PUBLIC_URL`}
 		/>
 
 		<p class="my-2">
@@ -44,7 +44,7 @@
 		<h3 class="mb-2 mt-4 text-lg">Correct usage:</h3>
 		<CodeBlock
 			label="+page.ts"
-			command={`console.log(import.meta.env.VITE_PUBLIC_URL);`}
+			command={`import.meta.env.VITE_PUBLIC_URL`}
 		/>
 	</section>
 
@@ -58,7 +58,7 @@
 
 		<CodeBlock
 			label="index.ts"
-			command={`console.log(process.env.VITE_SECRET);`}
+			command={`process.env.VITE_SECRET`}
 		/>
 
 		<p class="my-2">
