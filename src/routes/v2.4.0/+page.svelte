@@ -36,7 +36,7 @@
 	<Title fullText="Release Notes - v2.4.0" />
 
 	<p class="mt-8 mb-8 sm:mt-0">
-		Released on 2025-12-18. This version includes various improvements to the scan usage output and fixes for t3-env and Next.js framework validators.
+		Released on 2025-12-26. This version includes various improvements to the scan usage output and fixes for t3-env and Next.js framework validators.
 	</p>
 	<ul class="list-inside list-disc space-y-4">
 		<li>Added spacing before missing example file message in scan usage output.</li>
