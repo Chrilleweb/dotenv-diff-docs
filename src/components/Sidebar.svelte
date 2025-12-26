@@ -27,20 +27,13 @@
 		{
 			title: 'Versions',
 			children: [
-				{ title: 'v2.3.12 (newest)', href: '/v2.3.12' },
+				{title: 'v2.4.0 (newest)', href: '/v2.4.0' },
+				{ title: 'v2.3.12', href: '/v2.3.12' },
 				{ title: 'v2.3.11', href: '/v2.3.11' },
 				{ title: '2.3.10', href: '/v2.3.10' },
 				{ title: '2.3.9', href: '/v2.3.9' },
 				{ title: '2.3.8', href: '/v2.3.8' },
-				{ title: '2.3.7', href: '/v2.3.7' },
-				{ title: '2.3.6', href: '/v2.3.6' },
-				{ title: '2.3.5', href: '/v2.3.5' },
-				{ title: '2.3.4', href: '/v2.3.4' },
-				{ title: '2.3.2', href: '/v2.3.2' },
-				{ title: '2.3.1', href: '/v2.3.1' },
-				{ title: '2.3.0', href: '/v2.3.0' },
-				{ title: '2.2.8', href: '/v2.2.8' },
-				{ title: '2.2.7', href: '/v2.2.7' }
+				{ title: '2.3.7', href: '/v2.3.7' }
 			]
 		}
 	];

@@ -76,4 +76,4 @@
 	</section>
 </div>
 
-<BackNext backHref="/nextjs" backTitle="Next.js" nextHref="/v2.3.12" nextTitle="v2.3.12" />
+<BackNext backHref="/nextjs" backTitle="Next.js" nextHref="/v2.4.0" nextTitle="v2.4.0" />
