@@ -54,9 +54,7 @@
 		<h2 class="mb-3 text-xl">2. Server variable used in client code</h2>
 
 		<p>
-			dotenv-diff inspects file paths to detect client-side usage (e.g. files inside
-			<code>/components/</code>, <code>/pages/</code>, <code>/app/</code> or containing
-			<code>"use client"</code>).
+			Client-side usage is detected explicitly via "use client" or import.meta.env.
 		</p>
 
 		<CodeBlock
@@ -74,34 +72,9 @@ console.log(process.env.SECRET_KEY);`}
 		</p>
 	</section>
 
-	<!-- 3 -->
-	<section>
-		<h2 class="mb-3 text-xl">3. Client variable used in server code</h2>
-
-		<p>
-			Variables in the <code>client</code> schema are meant for the browser. Using them in
-			server-only files is allowed by T3-env but often indicates confusion about data
-			flow.
-		</p>
-
-		<CodeBlock
-			label="src/pages/api/user.ts"
-			command={`export default function handler() {
-  const siteName = process.env.NEXT_PUBLIC_SITE_NAME; // from client schema
-}`}
-		/>
-
-		<p class="my-2">
-			Warning:
-			<br />
-			Variable "NEXT_PUBLIC_SITE_NAME" is used in server code but only defined in client
-			schema.
-		</p>
-	</section>
-
 	<!-- 4 -->
 	<section>
-		<h2 class="mb-3 text-xl">4. Missing variables in .env or .env.example</h2>
+		<h2 class="mb-3 text-xl">3. Missing variables in .env or .env.example</h2>
 
 		<p>
 			If variables defined in the schema are not present in your <code>.env</code> or
@@ -131,7 +104,7 @@ console.log(process.env.SECRET_KEY);`}
 
 	<!-- 5 -->
 	<section>
-		<h2 class="mb-3 text-xl">5. Warning about NEXT_PUBLIC_ usage in T3-env projects</h2>
+		<h2 class="mb-3 text-xl">4. Warning about NEXT_PUBLIC_ usage in T3-env projects</h2>
 
 		<p>
 			T3-env encourages defining client variables in the schema instead of relying on
@@ -153,7 +126,7 @@ console.log(process.env.SECRET_KEY);`}
 
 	<!-- 6 -->
 	<section>
-		<h2 class="mb-3 text-xl">6. Automatic detection</h2>
+		<h2 class="mb-3 text-xl">5. Automatic detection</h2>
 
 		<p>
 			dotenv-diff automatically detects T3-env if an <code>env.ts</code> or
@@ -177,7 +150,6 @@ export const env = createEnv({...});`}
 		<ul class="list-disc list-inside space-y-2">
 			<li>Variables must be defined in <code>server</code> or <code>client</code> schema</li>
 			<li>Server variables → cannot be used in client files</li>
-			<li>Client variables → should not be used in server files</li>
 			<li>Schema variables must exist in <code>.env</code> or <code>.env.example</code></li>
 			<li><code>NEXT_PUBLIC_*</code> prefix triggers warnings in T3-env projects</li>
 		</ul>

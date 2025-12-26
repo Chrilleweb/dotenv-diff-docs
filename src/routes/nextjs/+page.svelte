@@ -67,31 +67,9 @@ console.log(process.env.SECRET_TOKEN);`}
 		</p>
 	</section>
 
-	<!-- 3 -->
-	<section>
-		<h2 class="mb-3 text-xl">3. process.env usage in client-side React must use NEXT_PUBLIC_</h2>
-
-		<p>
-			Regular React components (e.g. <code>.tsx</code>) that run on the client must also use
-			<code>NEXT_PUBLIC_*</code>. dotenv-diff detects incorrect variable prefixes.
-		</p>
-
-		<CodeBlock
-			label="Card.tsx"
-			command={`"use client";
-console.log(process.env.API_SECRET);`}
-		/>
-
-		<p class="my-2">
-			Warning:
-			<br />
-			process.env inside client components must use NEXT_PUBLIC_ variables
-		</p>
-	</section>
-
 	<!-- 4 -->
 	<section>
-		<h2 class="mb-3 text-xl">4. Server-only environment variables are allowed in API routes</h2>
+		<h2 class="mb-3 text-xl">3. Server-only environment variables are allowed in API routes</h2>
 
 		<p>
 			Next.js allows private environment variables to be accessed in server-only files without any
@@ -115,7 +93,6 @@ console.log(process.env.API_SECRET);`}
 		<ul class="list-disc list-inside space-y-2">
 			<li><code>NEXT_PUBLIC_*</code> → cannot be used in server-only modules</li>
 			<li>Client components → may only use <code>NEXT_PUBLIC_*</code></li>
-			<li>React components with <code>"use client"</code> → same rule as above</li>
 			<li>Server files (API routes, route handlers) → may use private variables</li>
 		</ul>
 	</section>
