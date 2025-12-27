@@ -28,25 +28,22 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
-	<title>v2.4.1</title>
+	<title>v2.4.2</title>
 	<meta name="description" content="dotenv-diff documentation" />
 </svelte:head>
 
 <div class="space-y-6">
-	<Title fullText="Release Notes - v2.4.1" />
+	<Title fullText="Release Notes - v2.4.2" />
 
 	<p class="mt-8 mb-8 sm:mt-0">
-		Released on 2025-12-26. This version adds Example warnings to the JSON output of scan usage, renames a statistics field, and fixes bugs in the Next.js and T3-env framework rules as well as secret detection.
+		Released on 2025-12-27. This version fixes bugs in the t3-env integration.
 	</p>
 	<ul class="list-inside list-disc space-y-4">
-		<li>Added Example warings to JSON output of scan usage.</li>
-		<li>Changed scan statistics name from "Total usages found" to "Total variables".</li>
-		<li>Fixed nextjs framework rules bug where multiple warnings could be generated for the same usage.</li>
-		<li>Fixed t3-env framework rules bug where multiple warnings could be generated for the same usage.</li>
-		<li>Fixed false positive secret detection for certain harmless attribute keys in codebase scanner.</li>
+		<li>Fixed bug where t3-env schema was not loaded correctly in some edge cases.</li>
+		<li>Fixed duplicate t3-env warnings being shown for the same variable.</li>
 	</ul>
 </div>
 
-<BackNext backHref="/v2.4.0" backTitle="v2.4.0" nextHref="/v2.4.2" nextTitle="v2.4.2" />
+<BackNext backHref="/v2.4.1" backTitle="v2.4.1" nextHref={null} nextTitle="Next" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />
