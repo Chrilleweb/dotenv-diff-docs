@@ -113,6 +113,6 @@ console.log(process.env.SECRET_TOKEN);`}
 <BackNext
 	backHref="/sveltekit"
 	backTitle="SvelteKit"
-	nextHref="/t3-env"
-	nextTitle="T3-env"
+	nextHref="/ignore-comments"
+	nextTitle="Ignoring Comments"
 />
