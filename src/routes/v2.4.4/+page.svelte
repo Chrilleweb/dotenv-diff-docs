@@ -28,22 +28,22 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
-	<title>v2.4.3</title>
+	<title>v2.4.4</title>
 	<meta name="description" content="dotenv-diff documentation" />
 </svelte:head>
 
 <div class="space-y-6">
-	<Title fullText="Release Notes - v2.4.3" />
+	<Title fullText="Release Notes - v2.4.4" />
 
 	<p class="mt-8 mb-8 sm:mt-0">
-		Released on 2025-12-27. This version removes T3-env specific warnings and related code from the codebase scanner.
+		Released on 2025-12-27. This version fixes a bug in the Next.js framework rules.
 	</p>
 	<ul class="list-inside list-disc space-y-4">
-		<li>Removed T3-env specific warnings and related code from the codebase scanner.</li>
+		<li>Fixed bug in next js framework rules</li>
 	</ul>
-	<p>T3-env integration has been completely removed in this release, because it was causing more confusion than value for most users.</p>
+	<p>We want to warn about environment variables not using 'NEXT_PUBLIC' in client-side code for Next.js projects - Fixed an issue where that warning was not being triggered correctly.</p>
 </div>
 
-<BackNext backHref="/v2.4.2" backTitle="v2.4.2" nextHref="/v2.4.4" nextTitle="v2.4.4" />
+<BackNext backHref="/v2.4.3" backTitle="v2.4.3" nextHref={null} nextTitle="Next" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />
