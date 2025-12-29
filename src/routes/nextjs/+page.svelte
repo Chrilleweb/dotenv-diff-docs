@@ -28,7 +28,7 @@
 
 		<p>
 			Next.js exposes <code>NEXT_PUBLIC_*</code> variables to the browser. These must never appear in
-			server-only files such as API routes or <code>.server.ts</code> modules.
+			server-only files such as API routes, route handlers, middleware, or .server.ts files.
 		</p>
 
 		<CodeBlock
@@ -41,7 +41,7 @@
 		<p class="my-2">
 			Warning:
 			<br />
-			NEXT_PUBLIC_ variables are exposed to the browser — don't use them in server-only files
+			NEXT_PUBLIC_ variable used in server-only file
 		</p>
 	</section>
 
@@ -84,6 +84,53 @@ console.log(process.env.SECRET_TOKEN);`}
 		/>
 
 		<p class="my-2">✔️ Allowed — no warnings</p>
+	</section>
+
+	<!-- 4 -->
+	<section>
+		<h2 class="mb-3 text-xl">4. import.meta.env is not supported in Next.js</h2>
+
+		<p>
+			Next.js does not use Vite-style environment variables.
+			Using import.meta.env will always produce a warning.
+		</p>
+
+		<CodeBlock
+			label="app/api/user/route.ts"
+			command={`export async function GET() {
+  console.log(import.meta.env.PRIVATE_KEY);
+}`}
+		/>
+
+		<p class="my-2">
+			Warning:
+			<br />
+			Next.js uses process.env, not import.meta.env (Vite syntax)
+		</p>
+	</section>
+
+	<!-- 5 -->
+	<section>
+		<h2 class="mb-3 text-xl">5. Sensitive data must not be marked as NEXT_PUBLIC_</h2>
+
+		<p>
+			dotenv-diff warns if a NEXT_PUBLIC_ variable appears to contain sensitive data 
+			based on common keywords such as SECRET, TOKEN, KEY, or PASSWORD. This can be tricky and sometimes cause false positives,
+			so review these warnings carefully.
+		</p>
+
+		<CodeBlock
+			label="app/api/user/route.ts"
+			command={`export async function GET() {
+  console.log(import.meta.env.NEXT_PUBLIC_SECRET_KEY);
+}`}
+		/>
+
+		<p class="my-2">
+			Warning:
+			<br />
+			Sensitive data marked as public
+		</p>
 	</section>
 
 	<!-- 5 Summary -->
