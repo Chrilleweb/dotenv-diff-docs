@@ -20,13 +20,12 @@
 	<CodeBlock label="Terminal" command="yarn add dotenv-diff" />
 
 	<p class="mt-8">
-		Once installed, you can immediately start scanning your codebase files for missing, unused,
-		duplicate or detect potential secrets.
+		Once installed, you can immediately start scanning your codebase for environment variable issues.
 	</p>
 
-	<CodeBlock label="Terminal" command="dotenv-diff" />
+	<CodeBlock label="Terminal" command="npx dotenv-diff" />
 
-	<p class="mt-6">Simply run dotenv-diff in your terminal, it's that easy!</p>
+	<p class="mt-6">Simply run dotenv-diff in your terminal to get started.</p>
 </div>
 
 <BackNext backHref="/" backTitle="dotenv-diff" nextHref="/configuration" nextTitle="Configuration" />

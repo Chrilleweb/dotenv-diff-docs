@@ -41,8 +41,8 @@
 
 	<p class="mb-8">
 		Scan your entire codebase to detect every environment variable reference and compares it against
-		your .env files. This makes it easy to spot unused, missing, and duplicate variables, and even
-		keep your codebase safe from accidental commits of secrets.
+		your .env files. It helps you catch missing, unused, duplicated, and misused variables early, before they cause
+		runtime errors, security issues, or accidental client-side exposure.
 	</p>
 </div>
 <div class="flex-shrink-0">

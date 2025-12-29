@@ -28,22 +28,23 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
-	<title>v2.4.4</title>
+	<title>v2.4.5</title>
 	<meta name="description" content="dotenv-diff documentation" />
 </svelte:head>
 
 <div class="space-y-6">
-	<Title fullText="Release Notes - v2.4.4" />
+	<Title fullText="Release Notes - v2.4.5" />
 
 	<p class="mt-8 mb-8 sm:mt-0">
-		Released on 2025-12-27. This version fixes a bug in the Next.js framework rules.
+		Released on 2025-12-29. This version improves the UI for framework warnings and updates the rules for Next.js and SvelteKit frameworks.
 	</p>
 	<ul class="list-inside list-disc space-y-4">
-		<li>Fixed bug in next js framework rules</li>
+		<li>Changed UI for framework warnings to include framework name + better formatting.</li>
+		<li>Updated nextjs framework rules.</li>
+		<li>Updated sveltekit framework rules.</li>
 	</ul>
-	<p>We want to warn about environment variables not using 'NEXT_PUBLIC' in client-side code for Next.js projects - Fixed an issue where that warning was not being triggered correctly.</p>
 </div>
 
-<BackNext backHref="/v2.4.3" backTitle="v2.4.3" nextHref="/v2.4.5" nextTitle="v2.4.5" />
+<BackNext backHref="/v2.4.4" backTitle="v2.4.4" nextHref={null} nextTitle="Next" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />
