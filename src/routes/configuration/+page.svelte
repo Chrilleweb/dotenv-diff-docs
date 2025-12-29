@@ -268,7 +268,6 @@
 		<ul class="list-disc list-inside space-y-2">
 			<li>All options are optional; dotenv-diff uses sensible defaults when omitted.</li>
 			<li>CLI flags always take precedence over configuration values.</li>
-			<li>Load dotenv-diff.config.json if it's detected.</li>
 			<li>The file must be valid JSON</li>
 		</ul>
 	</section>

@@ -129,7 +129,7 @@
 	</section>
 
 	<section>
-		<h2 class="mb-3 text-xl">6. Private variables must only be used in +page.server.ts</h2>
+		<h2 class="mb-3 text-xl">6. Private variables must only be used in server files</h2>
 
 		<p>
 			Pages that run on the client (<code>+page.ts</code>) cannot import server-only variables.
@@ -143,27 +143,7 @@
 		<p class="my-2">
 			Warning:
 			<br />
-			Private env vars should only be used in +page.server.ts
-		</p>
-	</section>
-
-	<section>
-		<h2 class="mb-3 text-xl">7. $env/dynamic/public is discouraged</h2>
-
-		<p>
-			SvelteKit recommends avoiding <code>$env/dynamic/public</code> because values can change at
-			runtime and may leak unintentionally. dotenv-diff warns whenever it appears.
-		</p>
-
-		<CodeBlock
-			label="app.ts"
-			command={`import { PUBLIC_RUNTIME } from '$env/dynamic/public/PUBLIC_RUNTIME';`}
-		/>
-
-		<p class="my-2">
-			Warning:
-			<br />
-			$env/dynamic/public is strongly discouraged
+			Private env vars should only be used in server files
 		</p>
 	</section>
 
@@ -175,9 +155,8 @@
 			<li><code>process.env</code> → cannot use <code>VITE_*</code></li>
 			<li><code>$env/static/private</code> → cannot import <code>VITE_*</code></li>
 			<li><code>$env/static/private</code> → cannot import <code>PUBLIC_*</code></li>
-			<li><code>$env/static/private</code> → allowed only in <code>+page.server.ts</code></li>
+			<li><code>$env/static/private</code> → allowed only in server files</li>
 			<li>Private env vars → not allowed inside <code>.svelte</code> files</li>
-			<li><code>$env/dynamic/public</code> → discouraged usage</li>
 		</ul>
 	</section>
 
