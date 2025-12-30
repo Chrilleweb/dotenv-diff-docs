@@ -273,4 +273,4 @@
 	</section>
 </div>
 
-<BackNext backHref="/installation" backTitle="Installation" nextHref="/sveltekit" nextTitle="SvelteKit" />
+<BackNext backHref="/installation" backTitle="Installation" nextHref="/hooks-ci" nextTitle="Git Hooks and CI/CD" />

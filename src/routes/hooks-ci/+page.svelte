@@ -106,4 +106,4 @@ jobs:
 	</section>
 </div>
 
-<BackNext backHref="/ignore-comments" backTitle="Ignoring Comments" nextHref="/configuration" nextTitle="Configuration" />
+<BackNext backHref="/configuration" backTitle="Configuration" nextHref="/sveltekit" nextTitle="SvelteKit" />

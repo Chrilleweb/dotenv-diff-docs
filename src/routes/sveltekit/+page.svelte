@@ -171,4 +171,4 @@
 	</section>
 </div>
 
-<BackNext backHref="/configuration" backTitle="Configuration" nextHref="/nextjs" nextTitle="Next.js" />
+<BackNext backHref="/hooks-ci" backTitle="Git Hooks and CI/CD" nextHref="/nextjs" nextTitle="Next.js" />

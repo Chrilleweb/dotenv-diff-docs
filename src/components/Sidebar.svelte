@@ -13,15 +13,15 @@
 			href: '/configuration'
 		},
 		{
+			title: 'Git hooks and CI/CD',
+			href: '/hooks-ci'
+		},
+		{
 			title: 'Frameworks',
 			children: [
 				{ title: 'Sveltekit', href: '/sveltekit' },
 				{ title: 'Next.js', href: '/nextjs' }
 			]
-		},
-		{
-			title: 'Git hooks and CI/CD',
-			href: '/hooks-ci'
 		},
 		{
 			title: 'Ignoring Comments',
