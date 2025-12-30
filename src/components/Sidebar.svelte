@@ -20,6 +20,10 @@
 			]
 		},
 		{
+			title: 'Git hooks and CI/CD',
+			href: '/hooks-ci'
+		},
+		{
 			title: 'Ignoring Comments',
 			href: '/ignore-comments'
 		},
