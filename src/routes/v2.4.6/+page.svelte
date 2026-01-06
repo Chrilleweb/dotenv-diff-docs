@@ -28,23 +28,23 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
-	<title>v2.4.5</title>
+	<title>v2.4.6</title>
 	<meta name="description" content="dotenv-diff documentation" />
 </svelte:head>
 
 <div class="space-y-6">
-	<Title fullText="Release Notes - v2.4.5" />
+	<Title fullText="Release Notes - v2.4.6" />
 
 	<p class="mt-8 mb-8 sm:mt-0">
-		Released on 2025-12-29. This version improves the UI for framework warnings and updates the rules for Next.js and SvelteKit frameworks.
+		Released on 2026-01-06. This version modifies the JSON output.
 	</p>
 	<ul class="list-inside list-disc space-y-4">
-		<li>Changed UI for framework warnings to include framework name + better formatting.</li>
-		<li>Updated nextjs framework rules.</li>
-		<li>Updated sveltekit framework rules.</li>
+		<li>Modified JSON output for scan usage.</li>
 	</ul>
+
+	<p>The JSON output for the scan command has been updated, because it had a few inconsistencies.</p>
 </div>
 
-<BackNext backHref="/v2.4.4" backTitle="v2.4.4" nextHref="/v2.4.6" nextTitle="v2.4.6" />
+<BackNext backHref="/v2.4.5" backTitle="v2.4.5" nextHref={null} nextTitle="Next" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />
