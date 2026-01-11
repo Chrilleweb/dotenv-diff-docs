@@ -1,6 +1,8 @@
 <script lang="ts">
 	export let label: string = 'Terminal';
 	export let command: string;
+	export let showHeader: boolean = true;
+	export let showCopy: boolean = true;
 
 	let copied = false;
 
@@ -10,25 +12,29 @@
 		setTimeout(() => (copied = false), 2000);
 	}
 
-	// Split command into lines and check if it's multiline
 	$: lines = command.trim().split('\n');
 	$: isMultiline = lines.length > 1;
 </script>
 
 <div class="rounded-xl bg-navbar-color">
-	<div class="flex items-center justify-between px-3 pt-2 pb-1.5 text-xs text-gray-400">
-		<span>{label}</span>
-		<button
-			class="flex h-7 w-16 cursor-pointer items-center justify-center rounded-md bg-gray-500 text-xs text-gray-300 transition hover:bg-gray-700"
-			on:click={copyToClipboard}
-		>
-			{#if copied}
-				✔ Copied
-			{:else}
-				Copy
+	{#if showHeader}
+		<div class="flex items-center justify-between px-3 pt-2 pb-1.5 text-xs text-gray-400">
+			<span>{label}</span>
+
+			{#if showCopy}
+				<button
+					class="cursor-pointer flex h-7 w-16 items-center justify-center rounded-md bg-gray-500 text-xs text-gray-300 transition hover:bg-gray-700"
+					on:click={copyToClipboard}
+				>
+					{#if copied}
+						✔ Copied
+					{:else}
+						Copy
+					{/if}
+				</button>
 			{/if}
-		</button>
-	</div>
+		</div>
+	{/if}
 
 	<div class="px-4 pb-6 text-sm">
 		{#if isMultiline}

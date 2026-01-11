@@ -28,23 +28,31 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
-	<title>v2.4.6</title>
+	<title>v2.4.7</title>
 	<meta name="description" content="dotenv-diff documentation" />
 </svelte:head>
 
 <div class="space-y-6">
-	<Title fullText="Release Notes - v2.4.6" />
+	<Title fullText="Release Notes - v2.4.7" />
 
 	<p class="mt-8 mb-8 sm:mt-0">
-		Released on 2026-01-06. This version modifies the JSON output.
+		Released on 2026-01-11. This version adds a progress bar to the codebase scanner and fixes a
+		path normalization issue.
 	</p>
 	<ul class="list-inside list-disc space-y-4">
-		<li>Modified JSON output for scan usage.</li>
+		<li>Added progress bar to codebase scanner.</li>
+		<ClickableImage
+			src="/successful-scan.png"
+			alt="Warnings count in scan usage stats"
+			onClick={() => openModal('/successful-scan.png')}
+		/>
+		<li>
+			Fixed path normalization issue where file paths were not consistently displayed across
+			different operating systems.
+		</li>
 	</ul>
-
-	<p>The JSON output for the scan command has been updated, because it had a few inconsistencies.</p>
 </div>
 
-<BackNext backHref="/v2.4.5" backTitle="v2.4.5" nextHref="/v2.4.7" nextTitle="v2.4.7" />
+<BackNext backHref="/v2.4.6" backTitle="v2.4.6" nextHref={null} nextTitle="Next" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />

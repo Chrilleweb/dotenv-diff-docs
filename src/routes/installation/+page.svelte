@@ -2,6 +2,7 @@
 	import Title from '$components/Title.svelte';
 	import BackNext from '$components/BackNext.svelte';
 	import CodeBlock from '$components/CodeBlock.svelte';
+	import InstallTabs from '$components/InstallTabs.svelte';
 </script>
 
 <svelte:head>
@@ -15,9 +16,11 @@
 <div class="space-y-6">
 	<Title fullText="Installation" />
 
-	<CodeBlock label="Terminal" command="npm install dotenv-diff" />
-	<CodeBlock label="Terminal" command="pnpm add dotenv-diff" />
-	<CodeBlock label="Terminal" command="yarn add dotenv-diff" />
+	<p>
+		Get started with dotenv-diff in seconds. Choose your package manager below.
+	</p>
+
+	<InstallTabs />
 
 	<p class="mt-8">
 		Once installed, you can immediately start scanning your codebase for environment variable issues.
