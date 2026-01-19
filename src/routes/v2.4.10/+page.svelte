@@ -28,21 +28,24 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
-	<title>v2.4.9</title>
+	<title>v2.4.10</title>
 	<meta name="description" content="dotenv-diff documentation" />
 </svelte:head>
 
 <div class="space-y-6">
-	<Title fullText="Release Notes - v2.4.9" />
+	<Title fullText="Release Notes - v2.4.10" />
 
 	<p class="mt-8 mb-8 sm:mt-0">
-		Released on 2026-01-13. This version fixes a bug in the sveltekit framework rules.
+		Released on 2026-01-19. This version improves the JSON output and fixes several issues.
 	</p>
 	<ul class="list-inside list-disc space-y-4">
-		<li>Fixed sveltekit framework bug where process.env usage in +server.ts files were given a false warning.</li>
+		<li>Changed total variables to total variable references in scan statistics output.</li>
+		<li>Fixed compare mode json output missing stats</li>
+		<li>Fixed compare mode issue where it would warn about .env.example not being gitignored in edgde cases.</li>
+		<li>Fixed create example file prompt bug.</li>
 	</ul>
 </div>
 
-<BackNext backHref="/v2.4.8" backTitle="v2.4.8" nextHref="/v2.4.10" nextTitle="v2.4.10" />
+<BackNext backHref="/v2.4.9" backTitle="v2.4.9" nextHref={null} nextTitle="Next" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />
