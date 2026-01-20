@@ -28,24 +28,22 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
-	<title>v2.4.10</title>
+	<title>v2.4.11</title>
 	<meta name="description" content="dotenv-diff documentation" />
 </svelte:head>
 
 <div class="space-y-6">
-	<Title fullText="Release Notes - v2.4.10" />
+	<Title fullText="Release Notes - v2.4.11" />
 
 	<p class="mt-8 mb-8 sm:mt-0">
-		Released on 2026-01-19. This version improves the JSON output and fixes several issues.
+		Released on 2026-01-20. This version adds a SvelteKit framework rule.
 	</p>
 	<ul class="list-inside list-disc space-y-4">
-		<li>Changed total variables to total variable references in scan statistics output.</li>
-		<li>Fixed compare mode json output missing stats</li>
-		<li>Fixed compare mode issue where it would warn about .env.example not being gitignored in edgde cases.</li>
-		<li>Fixed create example file prompt bug.</li>
+		<li>Added SvelteKit framework rule (PUBLIC_ env vars cant be accessed through $env/dynamic/private).</li>
+		<li>Fixed sveltekit framework rules - $env imports were not being detected correctly in some edge cases.</li>
 	</ul>
 </div>
 
-<BackNext backHref="/v2.4.9" backTitle="v2.4.9" nextHref="/v2.4.11" nextTitle="v2.4.11" />
+<BackNext backHref="/v2.4.10" backTitle="v2.4.10" nextHref={null} nextTitle="Next" />
 
 <OpenImg open={showModal} onClose={closeModal} imgSrc={currentImageSrc} />

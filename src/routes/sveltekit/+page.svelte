@@ -30,10 +30,7 @@
 			<code>import.meta.env</code>. Using any other prefix will produce a warning.
 		</p>
 
-		<CodeBlock
-			label="+page.ts"
-			command={`import.meta.env.PUBLIC_URL`}
-		/>
+		<CodeBlock label="+page.ts" command={`import.meta.env.PUBLIC_URL`} />
 
 		<p class="my-2">
 			This triggers:
@@ -41,134 +38,135 @@
 			Variables accessed through import.meta.env must start with "VITE_"
 		</p>
 
-		<h3 class="mb-2 mt-4 text-lg">Correct usage:</h3>
-		<CodeBlock
-			label="+page.ts"
-			command={`import.meta.env.VITE_PUBLIC_URL`}
-		/>
+		<h3 class="mt-4 mb-2 text-lg">Correct usage:</h3>
+		<CodeBlock label="+page.ts" command={`import.meta.env.VITE_PUBLIC_URL`} />
 	</section>
 
 	<section>
-		<h2 class="mb-3 text-xl">2. VITE_ variables may not be accessed via process.env</h2>
+		<h2 class="mb-3 text-xl">2. process.env must only be used in server files</h2>
 
 		<p>
-			<code>process.env</code> is server-only. Since <code>VITE_</code> variables are intended for the
-			client, SvelteKit does not allow mixing the two systems.
+			process.env is server-only in SvelteKit. Using it in client files will trigger a warning,
+			regardless of variable prefix.
 		</p>
 
-		<CodeBlock
-			label="index.ts"
-			command={`process.env.VITE_SECRET`}
-		/>
+		<CodeBlock label="index.ts" command={`process.env.VITE_SECRET`} />
 
 		<p class="my-2">
 			dotenv-diff warns:
 			<br />
-			Variables accessed through process.env cannot start with "VITE_"
+			process.env should only be used in server files
 		</p>
 	</section>
 
 	<section>
-		<h2 class="mb-3 text-xl">3. Private variables cannot start with VITE_</h2>
+		<h2 class="mb-3 text-xl">3. $env/dynamic/private cannot be used in client-side code</h2>
 
 		<p>
-			When importing private variables using <code>$env/static/private</code>, the variable must not be
-			client-exposed. dotenv-diff warns if a variable begins with <code>VITE_</code>.
+			SvelteKit provides access to private environment variables through $env/dynamic/private. These
+			variables must not be used in client-side code.
 		</p>
 
-		<CodeBlock
-			label="app.ts"
-			command={`import { VITE_KEY } from '$env/static/private/VITE_KEY';`}
-		/>
+		<CodeBlock label="+page.svelte" command={`import { env } from '$env/dynamic/private';`} />
 
 		<p class="my-2">
-			Warning:
+			dotenv-diff warns:
 			<br />
-			$env/static/private variables must not start with "VITE_"
+			$env/dynamic/private cannot be used in client-side code
 		</p>
 	</section>
 
 	<section>
-		<h2 class="mb-3 text-xl">4. PUBLIC_ variables may never be used in private imports</h2>
-
+		<h2 class="mb-3 text-xl">4. $env/dynamic/public variables must start with "PUBLIC_"</h2>
 		<p>
-			All variables prefixed with <code>PUBLIC_</code> are safe for the browser. Therefore they must
-			not appear inside <code>$env/static/private</code> as they imply exposing private content.
+			Environment variables intended for the client must be accessed through $env/dynamic/public and
+			must start with <code>PUBLIC_</code>.
 		</p>
 
-		<CodeBlock
-			label="test.ts"
-			command={`import { PUBLIC_TOKEN } from '$env/static/private/PUBLIC_TOKEN';`}
-		/>
+		<CodeBlock label="+page.svelte" command={`import { env } from '$env/dynamic/public';`} />
 
 		<p class="my-2">
-			Warning:
+			dotenv-diff warns:
 			<br />
-			Variables starting with PUBLIC_ may never be used in private env imports
+			$env/dynamic/public variables must start with "PUBLIC_"
 		</p>
 	</section>
 
 	<section>
-		<h2 class="mb-3 text-xl">5. Private variables cannot be used inside .svelte files</h2>
+		<h2 class="mb-3 text-xl">5. Private variables cannot start with PUBLIC_</h2>
 
 		<p>
-			Svelte components run partly in the browser. Even if the script is module-scoped,
-			<code>$env/static/private</code> imports are not allowed.
+			When importing private variables using $env/static/private, the variable must not be
+			client-exposed. dotenv-diff warns if a variable begins with PUBLIC_ .
 		</p>
 
-		<CodeBlock
-			label="App.svelte"
-			command={`import { SECRET_KEY } from '$env/static/private/SECRET_KEY';`}
-		/>
+		<CodeBlock label="app.ts" command={`import { PUBLIC_KEY } from '$env/static/private';`} />
 
 		<p class="my-2">
 			Warning:
 			<br />
-			Private environment variables cannot be used in Svelte components
+			$env/static/private variables must not start with "PUBLIC_"
 		</p>
 	</section>
 
 	<section>
-		<h2 class="mb-3 text-xl">6. Private variables must only be used in server files</h2>
+		<h2 class="mb-3 text-xl">6. Private variables cannot be used inside client files</h2>
 
-		<p>
-			Pages that run on the client (<code>+page.ts</code>) cannot import server-only variables.
-		</p>
+		<p>client files run in the browser. $env/static/private imports are not allowed.</p>
 
-		<CodeBlock
-			label="+page.ts"
-			command={`import { SECRET_KEY } from '$env/static/private/SECRET_KEY';`}
-		/>
+		<CodeBlock label="App.svelte" command={`import { SECRET_KEY } from '$env/static/private';`} />
 
 		<p class="my-2">
 			Warning:
 			<br />
-			Private env vars should only be used in server files
+			$env/static/private variables cannot be used in client-side code
+		</p>
+	</section>
+
+	<section>
+		<h2 class="mb-3 text-xl">7. PUBLIC_ variables cannot be accessed through private imports</h2>
+
+		<p>
+			Environment variables intended for the client start with PUBLIC_. These cannot be accessed
+			through $env/dynamic/private or $env/static/private.
+		</p>
+
+		<CodeBlock label="hooks.server.ts" command={`import { env } from '$env/dynamic/private';`} />
+
+		<p class="my-2">
+			dotenv-diff warns:
+			<br />
+			Private environment variables must not start with "PUBLIC_"
 		</p>
 	</section>
 
 	<section>
 		<h2 class="mb-3 text-xl">Summary of All Rules</h2>
 
-		<ul class="list-disc list-inside space-y-2">
-			<li><code>import.meta.env</code> → must use <code>VITE_*</code></li>
-			<li><code>process.env</code> → cannot use <code>VITE_*</code></li>
-			<li><code>$env/static/private</code> → cannot import <code>VITE_*</code></li>
-			<li><code>$env/static/private</code> → cannot import <code>PUBLIC_*</code></li>
-			<li><code>$env/static/private</code> → allowed only in server files</li>
-			<li>Private env vars → not allowed inside <code>.svelte</code> files</li>
+		<ul class="list-inside list-disc space-y-2">
+			<li>import.meta.env → must use VITE_*</li>
+			<li>process.env → allowed only in server files</li>
+			<li>$env/dynamic/private → server-only, never PUBLIC_*</li>
+			<li>$env/dynamic/public → must use PUBLIC_*</li>
+			<li>$env/static/private → server-only, never PUBLIC_*</li>
+			<li>$env/static/public → must use PUBLIC_*</li>
+			<li>Private env vars → not allowed in client-side code</li>
 		</ul>
 	</section>
 
 	<section>
 		<h2 class="mb-3 text-xl">Best Practices</h2>
-		<ul class="list-disc list-inside space-y-2">
+		<ul class="list-inside list-disc space-y-2">
 			<li>Use <code>PUBLIC_*</code> only for values intended for the browser.</li>
 			<li>Use <code>VITE_*</code> only when accessed via <code>import.meta.env</code>.</li>
-			<li>Restrict sensitive variables to server files.</li>
-			<li>Avoid mixing access methods across systems.</li>
+			<li>Use private variables only in server-side code.</li>
 		</ul>
 	</section>
 </div>
 
-<BackNext backHref="/hooks-ci" backTitle="Git Hooks and CI/CD" nextHref="/nextjs" nextTitle="Next.js" />
+<BackNext
+	backHref="/hooks-ci"
+	backTitle="Git Hooks and CI/CD"
+	nextHref="/nextjs"
+	nextTitle="Next.js"
+/>
