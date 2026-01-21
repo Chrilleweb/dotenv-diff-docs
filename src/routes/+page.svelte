@@ -37,12 +37,18 @@
 		<a href="https://www.npmjs.com/package/dotenv-diff" target="_blank" rel="noopener noreferrer">
 			<img src="https://img.shields.io/npm/dt/dotenv-diff.svg" alt="npm downloads" />
 		</a>
+		<a href="https://github.com/Chrilleweb/dotenv-diff" target="_blank" rel="noopener noreferrer">
+			<img
+				src="https://img.shields.io/github/stars/Chrilleweb/dotenv-diff?style=social"
+				alt="GitHub stars"
+			/>
+		</a>
 	</div>
 
 	<p class="mb-8">
 		Scan your entire codebase to detect every environment variable reference and compares it against
-		your .env files. It helps you catch missing, unused, duplicated, and misused variables early, before they cause
-		runtime errors, security issues, or accidental client-side exposure.
+		your .env files. It helps you catch missing, unused, duplicated, and misused variables early,
+		before they cause runtime errors, security issues, or accidental client-side exposure.
 	</p>
 </div>
 <div class="flex-shrink-0">
@@ -52,9 +58,9 @@
 		onClick={() => openModal('/demo3.gif')}
 	/>
 	<p class="mt-8">
-		Optimized for SvelteKit and Next.js. Also works well in modern JavaScript/TypeScript projects and frameworks
-		like Node.js, Nuxt, and Vue — or any other setup where you want reliable .env file
-		comparison.
+		Optimized for SvelteKit and Next.js. Also works well in modern JavaScript/TypeScript projects
+		and frameworks like Node.js, Nuxt, and Vue — or any other setup where you want reliable .env
+		file comparison.
 	</p>
 </div>
 
