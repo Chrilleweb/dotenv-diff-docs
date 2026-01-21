@@ -24,30 +24,7 @@
 
 	<!-- 1 -->
 	<section>
-		<h2 class="mb-3 text-xl">1. NEXT_PUBLIC_ variables cannot be used in server-only files</h2>
-
-		<p>
-			Next.js exposes <code>NEXT_PUBLIC_*</code> variables to the browser. These must never appear in
-			server-only files such as API routes, route handlers, middleware, or .server.ts files.
-		</p>
-
-		<CodeBlock
-			label="app/api/test/route.ts"
-			command={`export async function GET() {
-  console.log(process.env.NEXT_PUBLIC_API);
-}`}
-		/>
-
-		<p class="my-2">
-			Warning:
-			<br />
-			NEXT_PUBLIC_ variable used in server-only file
-		</p>
-	</section>
-
-	<!-- 2 -->
-	<section>
-		<h2 class="mb-3 text-xl">2. Client components may only access NEXT_PUBLIC_ variables</h2>
+		<h2 class="mb-3 text-xl">1. Client components may only access NEXT_PUBLIC_ variables</h2>
 
 		<p>
 			Any file containing <code>"use client"</code> runs in the browser, and therefore can only
@@ -67,9 +44,9 @@ console.log(process.env.SECRET_TOKEN);`}
 		</p>
 	</section>
 
-	<!-- 4 -->
+	<!-- 2 -->
 	<section>
-		<h2 class="mb-3 text-xl">3. Server-only environment variables are allowed in API routes</h2>
+		<h2 class="mb-3 text-xl">2. Server-only environment variables are allowed in API routes</h2>
 
 		<p>
 			Next.js allows private environment variables to be accessed in server-only files without any
@@ -83,12 +60,12 @@ console.log(process.env.SECRET_TOKEN);`}
 }`}
 		/>
 
-		<p class="my-2">✔️ Allowed — no warnings</p>
+		<p class="my-2">Allowed — no warnings</p>
 	</section>
 
-	<!-- 4 -->
+	<!-- 3 -->
 	<section>
-		<h2 class="mb-3 text-xl">4. import.meta.env is not supported in Next.js</h2>
+		<h2 class="mb-3 text-xl">3. import.meta.env is not supported in Next.js</h2>
 
 		<p>
 			Next.js does not use Vite-style environment variables.
@@ -109,9 +86,9 @@ console.log(process.env.SECRET_TOKEN);`}
 		</p>
 	</section>
 
-	<!-- 5 -->
+	<!-- 4 -->
 	<section>
-		<h2 class="mb-3 text-xl">5. Sensitive data must not be marked as NEXT_PUBLIC_</h2>
+		<h2 class="mb-3 text-xl">4. Sensitive data must not be marked as NEXT_PUBLIC_</h2>
 
 		<p>
 			dotenv-diff warns if a NEXT_PUBLIC_ variable appears to contain sensitive data 
@@ -122,7 +99,7 @@ console.log(process.env.SECRET_TOKEN);`}
 		<CodeBlock
 			label="app/api/user/route.ts"
 			command={`export async function GET() {
-  console.log(import.meta.env.NEXT_PUBLIC_SECRET_KEY);
+  console.log(process.env.NEXT_PUBLIC_SECRET_KEY);
 }`}
 		/>
 
@@ -138,9 +115,9 @@ console.log(process.env.SECRET_TOKEN);`}
 		<h2 class="mb-3 text-xl">Summary of All Rules</h2>
 
 		<ul class="list-disc list-inside space-y-2">
-			<li><code>NEXT_PUBLIC_*</code> → cannot be used in server-only modules</li>
 			<li>Client components → may only use <code>NEXT_PUBLIC_*</code></li>
 			<li>Server files (API routes, route handlers) → may use private variables</li>
+			<li><code>import.meta.env</code> → not supported in Next.js</li>
 		</ul>
 	</section>
 
@@ -152,7 +129,6 @@ console.log(process.env.SECRET_TOKEN);`}
 			<li>Use <code>NEXT_PUBLIC_*</code> only for variables intended for the browser.</li>
 			<li>Never expose secrets through <code>NEXT_PUBLIC_</code>.</li>
 			<li>Keep private variables inside API routes or server components.</li>
-			<li>Be explicit about client/server boundaries using <code>"use client"</code>.</li>
 		</ul>
 	</section>
 </div>

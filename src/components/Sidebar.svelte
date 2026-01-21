@@ -38,16 +38,6 @@
 				{ title: 'v2.4.6', href: '/v2.4.6' },
 				{ title: 'v2.4.5', href: '/v2.4.5' },
 				{ title: 'v2.4.4', href: '/v2.4.4' },
-				{ title: 'v2.4.3', href: '/v2.4.3' },
-				{ title: 'v2.4.2', href: '/v2.4.2' },
-				{ title: 'v2.4.1', href: '/v2.4.1' },
-				{ title: 'v2.4.0', href: '/v2.4.0' },
-				{ title: 'v2.3.12', href: '/v2.3.12' },
-				{ title: 'v2.3.11', href: '/v2.3.11' },
-				{ title: '2.3.10', href: '/v2.3.10' },
-				{ title: '2.3.9', href: '/v2.3.9' },
-				{ title: '2.3.8', href: '/v2.3.8' },
-				{ title: '2.3.7', href: '/v2.3.7' }
 			]
 		}
 	];
