@@ -92,21 +92,21 @@ console.log(process.env.SECRET_TOKEN);`}
 
 		<p>
 			dotenv-diff warns if a NEXT_PUBLIC_ variable appears to contain sensitive data 
-			based on common keywords such as SECRET, TOKEN, KEY, or PASSWORD. This can be tricky and sometimes cause false positives,
+			based on common keywords such as SECRET, PRIVATE or PASSWORD. This can be tricky and sometimes cause false positives,
 			so review these warnings carefully.
 		</p>
 
 		<CodeBlock
 			label="app/api/user/route.ts"
 			command={`export async function GET() {
-  console.log(process.env.NEXT_PUBLIC_SECRET_KEY);
+  console.log(process.env.NEXT_PUBLIC_SECRET_PASSWORD);
 }`}
 		/>
 
 		<p class="my-2">
 			Warning:
 			<br />
-			Sensitive data marked as public
+			Potential sensitive environment variable exposed to the browser
 		</p>
 	</section>
 

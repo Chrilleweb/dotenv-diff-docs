@@ -141,6 +141,28 @@
 	</section>
 
 	<section>
+		<h2 class="mb-3 text-xl">8. Sensitive data must not be marked as PUBLIC_ or VITE_</h2>
+
+		<p>
+			dotenv-diff warns if a PUBLIC_ or VITE_ variable appears to contain sensitive data 
+			based on common keywords such as SECRET, PRIVATE or PASSWORD. This can be tricky and sometimes cause false positives,
+			so review these warnings carefully.
+		</p>
+
+		<CodeBlock
+			label="+page.svelte"
+			command={`import { env } from '$env/dynamic/public';
+console.log(env.PUBLIC_SECRET_PASSWORD);`}
+		/>
+
+		<p class="my-2">
+			Warning:
+			<br />
+			Potential sensitive environment variable exposed to the browser
+		</p>
+	</section>
+
+	<section>
 		<h2 class="mb-3 text-xl">Summary of All Rules</h2>
 
 		<ul class="list-inside list-disc space-y-2">
@@ -151,6 +173,7 @@
 			<li>$env/static/private → server-only, never PUBLIC_*</li>
 			<li>$env/static/public → must use PUBLIC_*</li>
 			<li>Private env vars → not allowed in client-side code</li>
+			<li>Sensitive data → never use PUBLIC_* or VITE_*</li>
 		</ul>
 	</section>
 
@@ -160,6 +183,7 @@
 			<li>Use <code>PUBLIC_*</code> only for values intended for the browser.</li>
 			<li>Use <code>VITE_*</code> only when accessed via <code>import.meta.env</code>.</li>
 			<li>Use private variables only in server-side code.</li>
+			<li>Never expose sensitive data through <code>PUBLIC_</code> or <code>VITE_</code>.</li>
 		</ul>
 	</section>
 </div>
