@@ -26,20 +26,6 @@
 		{
 			title: 'Ignoring Comments',
 			href: '/ignore-comments'
-		},
-		{
-			title: 'Versions',
-			children: [
-				{ title: 'v2.5.0 (newest)', href: '/v2.5.0' },
-				{ title: 'v2.4.11', href: '/v2.4.11' },
-				{ title: 'v2.4.10', href: '/v2.4.10' },
-				{ title: 'v2.4.9', href: '/v2.4.9' },
-				{ title: 'v2.4.8', href: '/v2.4.8' },
-				{ title: 'v2.4.7', href: '/v2.4.7' },
-				{ title: 'v2.4.6', href: '/v2.4.6' },
-				{ title: 'v2.4.5', href: '/v2.4.5' },
-				{ title: 'v2.4.4', href: '/v2.4.4' },
-			]
 		}
 	];
 
