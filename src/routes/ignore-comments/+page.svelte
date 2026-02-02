@@ -51,6 +51,15 @@
 
 	<section>
 		<h2 class="mb-3 text-xl">Ignore Entire Sections</h2>
+
+		<CodeBlock
+			label="template.html"
+			command={`// dotenv-diff-ignore-start
+const skKey = 'sk_test_1234567890abcdef';
+const testKey = process.env.TEST_API_KEY;
+// dotenv-diff-ignore-end`}
+		/>
+		Or
 		<CodeBlock
 			label="template.html"
 			command={`<!-- dotenv-diff-ignore-start -->
@@ -66,39 +75,20 @@
 	</section>
 
 	<section>
-		<h2 class="mb-3 text-xl">Ignore Files and Patterns</h2>
+		<h2 class="mb-3 text-xl">Alternative Configuration</h2>
 		<p class="my-2">
-			If you need to skip entire files, folders, or key patterns, you can configure this globally
-			using
-			<code>excludeFiles</code>, <code>ignore</code>, or <code>ignoreRegex</code>.
+			If you need to ignore entire files, folders, or key patterns globally, consider using configuration options instead:
 		</p>
+			<ul>
+				<li>--exclude-files - File patterns to exclude from scanning.</li>
+				<li>--ignore - List of keys to ignore during comparison or scanning.</li>
+				<li>--ignore-regex - Regex patterns to skip matching keys.</li>
+			</ul>
 		<p class="my-2">
-			This is useful for excluding legacy code, generated files, or environment variables that are
-			intentionally out of scope.
-		</p>
-		<p class="my-2">
-			See the <a href="/configuration" class="underline">Configuration</a> page for the full list of
+			See the <a href="/configuration" class="text-blue-700 underline">Configuration</a> page for the full list of
 			supported options and examples.
 		</p>
 	</section>
-
-	<section>
-		<h2 class="mb-3 text-xl">When to Use</h2>
-		<ul class="list-inside list-disc space-y-2">
-			<li>When a hardcoded value (like a URL or test key) is intentionally safe.</li>
-			<li>To prevent false positives during CI/CD scans.</li>
-			<li>To skip irrelevant HTML or legacy code sections.</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2 class="mb-3 text-xl">Best Practices</h2>
-		<ul class="list-inside list-disc space-y-2">
-			<li>Use ignore comments sparingly — prefer environment variables for real secrets.</li>
-			<li>Never use it to hide actual API keys or production credentials.</li>
-			<li>Combine with <code>--strict</code> to still fail on non-ignored warnings.</li>
-		</ul>
-	</section>
 </div>
 
-<BackNext backHref="/nextjs" backTitle="Next.js" nextHref={null} nextTitle="Next" />
+<BackNext backHref="/nextjs" backTitle="Next.js" nextHref="/expire-warnings" nextTitle="Expiration Warnings" />

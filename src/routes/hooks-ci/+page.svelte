@@ -36,26 +36,6 @@
 	</section>
 
 	<section>
-		<h3 class="mb-2 text-lg">Example setup with lint-staged</h3>
-
-		<CodeBlock
-			label="package.json"
-			command={`{
-  "lint-staged": {
-    "*.{js,ts,tsx,jsx,svelte}": [
-      "dotenv-diff --example .env.example --strict"
-    ]
-  }
-}`}
-		/>
-
-		<p class="my-2">
-			In this setup, dotenv-diff runs automatically during git commit.
-			If issues are found, the commit is aborted.
-		</p>
-	</section>
-
-	<section>
 		<h2 class="mb-3 text-xl">Running dotenv-diff in GitHub Actions</h2>
 
 		<p class="my-2">
@@ -101,7 +81,6 @@ jobs:
 		<h2 class="mb-3 text-xl">Best Practices</h2>
 		<ul class="list-inside list-disc space-y-2">
 			<li>Use --example to specify the example environment file for validation.</li>
-			<li>Combine with <code>--strict</code> in CI to fail on warnings.</li>
 		</ul>
 	</section>
 </div>

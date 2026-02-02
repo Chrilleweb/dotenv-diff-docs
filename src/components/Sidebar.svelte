@@ -6,8 +6,6 @@
 
 	const navItems = [
 		{ title: 'Installation', href: '/installation' },
-		//{ title: 'Scan', href: '/scan' },
-		//{ title: 'Flags', href: '/flags' },
 		{
 			title: 'Configuration',
 			href: '/configuration'
@@ -26,6 +24,14 @@
 		{
 			title: 'Ignoring Comments',
 			href: '/ignore-comments'
+		},
+		{
+			title: 'Expire Warnings',
+			href: '/expire-warnings'
+		},
+		{
+			title: 'Monorepos',
+			href: '/monorepo'
 		}
 	];
 
