@@ -77,18 +77,28 @@ const testKey = process.env.TEST_API_KEY;
 	<section>
 		<h2 class="mb-3 text-xl">Alternative Configuration</h2>
 		<p class="my-2">
-			If you need to ignore entire files, folders, or key patterns globally, consider using configuration options instead:
+			If you need to ignore entire files, folders, or key patterns globally, consider using
+			configuration options instead:
 		</p>
-			<ul>
-				<li>--exclude-files - File patterns to exclude from scanning.</li>
-				<li>--ignore - List of keys to ignore during comparison or scanning.</li>
-				<li>--ignore-regex - Regex patterns to skip matching keys.</li>
-			</ul>
+		<ul>
+			<li>--exclude-files - File patterns to exclude from scanning.</li>
+			<li>--ignore - List of keys to ignore during comparison or scanning.</li>
+			<li>--ignore-regex - Regex patterns to skip matching keys.</li>
+		</ul>
 		<p class="my-2">
-			See the <a href="/configuration" class="text-blue-700 underline">Configuration</a> page for the full list of
-			supported options and examples.
+			For full list of supported options and examples, see the <a
+				href="https://github.com/Chrilleweb/dotenv-diff/blob/main/docs/configuration_and_flags.md"
+				class="text-blue-700 underline"
+			>
+				configuration and flags documentation on GitHub
+			</a>.
 		</p>
 	</section>
 </div>
 
-<BackNext backHref="/nextjs" backTitle="Next.js" nextHref="/expire-warnings" nextTitle="Expiration Warnings" />
+<BackNext
+	backHref="/nextjs"
+	backTitle="Next.js"
+	nextHref="/expire-warnings"
+	nextTitle="Expiration Warnings"
+/>
